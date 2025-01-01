@@ -23,7 +23,8 @@
         .resume-image {
             display: block;
             margin: 20px auto;
-            width: 500px;
+            width: 100%; /* Make the image responsive */
+            max-width: 500px; /* Set a maximum width */
             border: 2px solid #138882;
             border-radius: 10px;
         }
@@ -42,6 +43,18 @@
 
         a:hover {
             background-color: #17a396;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Adjust font size for smaller screens */
+            }
+
+            a {
+                font-size: 1em; /* Adjust button font size */
+                padding: 8px 16px; /* Adjust button padding */
+            }
         }
     </style>
 </head>

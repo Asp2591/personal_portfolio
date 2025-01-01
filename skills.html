@@ -19,14 +19,22 @@
             min-height: 100vh;
         }
 
+        h1 {
+            margin-bottom: 20px;
+        }
+
         .card {
             background-color: #222;
             border-radius: 10px;
             padding: 20px;
             margin: 10px;
-            width: 450px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center content horizontally */
+            width: auto; /* Allow width to adjust based on content */
+            max-width: 450px; /* Set a maximum width */
         }
 
         .card button {
@@ -39,6 +47,7 @@
             margin: 5px 0;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 100%; /* Make buttons full width */
         }
 
         .card button:hover {
@@ -49,6 +58,22 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%; /* Ensure the container takes full width */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em; /* Adjust font size for smaller screens */
+            }
+
+            .card {
+                margin: 5px; /* Reduce margin on smaller screens */
+            }
+
+            .card button {
+                font-size: 0.9em; /* Adjust button font size */
+            }
         }
     </style>
 </head>
@@ -72,7 +97,6 @@
             <button>Git and GitHub</button>
             <button>Prometheus</button>
             <button>Grafana</button>
-
         </div>
         <div class="card">
             <h2>Data Science</h2>
@@ -90,12 +114,12 @@
             <button>RAG</button>
         </div>
         <div class="card">
-            <h2>Web developement</h2>
+            <h2>Web Development</h2>
             <button>HTML & CSS</button>
-            <button>javaScript</button>
-            <button>Bootsrap</button>
+            <button>JavaScript</button>
+            <button>Bootstrap</button>
             <button>Flask</button>
-            <button>Fastapi</button>
+            <button>FastAPI</button>
         </div>
         <div class="card">
             <h2>Cloud Platform</h2>
@@ -107,12 +131,10 @@
             <button>MongoDB</button>
         </div>
         <div class="card">
-            <h2>Operating system</h2>
-            <button>Linux</button>
+            <h2>Operating System</h2>
+            <button> Linux</button>
         </div>
     </div>
 </body>
 
 </html>
-
-
