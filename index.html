@@ -12,9 +12,9 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Allow content to stack vertically */
+            flex-direction: column;
+            /* Allow content to stack vertically */
             min-height: 100vh;
-            overflow: hidden;
             font-family: 'Roboto', sans-serif;
             color: #fcf3f3;
             position: relative;
@@ -29,10 +29,14 @@
             animation: fadeIn 1s ease;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            justify-content: center; /* Center content vertically */
-            text-align: center; /* Center text within the content */
-            transition: margin-top 0.3s ease; /* Smooth transition for margin */
+            align-items: center;
+            /* Center content horizontally */
+            justify-content: center;
+            /* Center content vertically */
+            text-align: center;
+            /* Center text within the content */
+            transition: margin-top 0.3s ease;
+            /* Smooth transition for margin */
         }
 
         .content h1 {
@@ -46,10 +50,11 @@
         }
 
         .highlight {
-            color: #bb86fc;
+            color: #f107ab;
         }
 
         @keyframes blink-caret {
+
             from,
             to {
                 border-color: transparent;
@@ -79,12 +84,15 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
-            margin: 10px auto; /* Center the card */
+            margin: 10px auto;
+            /* Center the card */
             text-align: center;
             color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%; /* Responsive width */
-            max-width: 400px; /* Maximum width */
+            width: 90%;
+            /* Responsive width */
+            max-width: 400px;
+            /* Maximum width */
         }
 
         .card a {
@@ -96,12 +104,6 @@
         .card i {
             font-size: 2em;
             margin: 10px;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #e0e0e0;
         }
 
         .hamburger {
@@ -123,7 +125,8 @@
         }
 
         .nav-links {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             flex-direction: column;
             position: absolute;
             top: 60px;
@@ -142,7 +145,24 @@
         }
 
         .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2 );
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-pic {
+            width: 150px;
+            /* Set the width of the profile picture */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 50%;
+            /* Make it circular */
+            position: absolute;
+            /* Position it absolutely */
+            right: 20px;
+            /* Distance from the right */
+            top: 20px;
+            /* Distance from the top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Optional shadow for better appearance */
         }
 
         @media (max-width: 768px) {
@@ -174,29 +194,24 @@
         <a href="index.html">About Me</a>
         <a href="resume.html">Resume</a>
         <a href="blog.html">Blogs</a>
+        <a href="contact.html">Contact</a>
     </div>
     <div class="content" id="content">
         <h1 id="typing-animation">I am <span class="highlight"></span></h1>
         <div class="card">
             <h3>About Me</h3>
             <p>I am a passionate Data Scientist, MLOps Engineer, and DevOps Engineer with expertise in developing,
-                deploying, and managing machine learning models and scalable systems. I excel in building end-to-end data
-                pipelines, implementing CI/CD workflows, and automating model lifecycle management. Proficient in tools like
+                deploying, and managing machine learning models and scalable systems. I excel in building end-to-end
+                data
+                pipelines, implementing CI/CD workflows, and automating model lifecycle management. Proficient in tools
+                like
                 Docker, Kubernetes, and cloud platforms, I bridge the gap between data science and operations to deliver
-                robust, production-ready solutions. My work focuses on harnessing data-driven insights and optimizing system
+                robust, production-ready solutions. My work focuses on harnessing data-driven insights and optimizing
+                system
                 reliability to drive impactful outcomes.</p>
         </div>
-        <h2>Contact Information</h2>
-        <div class="card">
-            <h3>Connect with Me</h3>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://medium.com" target="_blank"><i class="fab fa-medium"></i></a>
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <div class="contact-info">
-                <p>Email: example@example.com</p>
-                <p>Contact: +1234567890</p>
-            </div>
-        </div>
+        <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+        <!-- Add your profile picture here -->
     </div>
     <script>
         const phrases = ["Data scientist.", "MlOps Engineer.", "DevOps engineer."];
