@@ -13,7 +13,6 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            /* Allow content to stack vertically */
             min-height: 100vh;
             font-family: 'Roboto', sans-serif;
             color: #fcf3f3;
@@ -23,118 +22,21 @@
             background-position: center;
         }
 
-        .content {
-            flex: 1;
-            padding: 20px;
-            animation: fadeIn 1s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* Center content horizontally */
-            justify-content: center;
-            /* Center content vertically */
-            text-align: center;
-            /* Center text within the content */
-            transition: margin-top 0.3s ease;
-            /* Smooth transition for margin */
-        }
-
-        .content h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #ffffff;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 4px solid #ffffff;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-
-        .highlight {
-            color: #f107ab;
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: #ffffff;
-            }
-        }
-
-        .content p {
-            font-size: 1.2em;
-            color: #e0e0e0;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px auto;
-            /* Center the card */
-            text-align: center;
-            color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            /* Responsive width */
-            max-width: 400px;
-            /* Maximum width */
-        }
-
-        .card a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .card i {
-            font-size: 2em;
-            margin: 10px;
-        }
-
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            position: absolute;
-            left: 20px;
-            top: 20px;
+        header {
+            background-color: rgba(64, 61, 97, 0.7);
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
             z-index: 1000;
-        }
-
-        .bar {
-            height: 3px;
-            width: 30px;
-            background-color: #ffffff;
-            margin: 3px 0;
-            transition: 0.4s;
+            display: flex;
+            justify-content: center; /* Center the nav links */
+            align-items: center;
         }
 
         .nav-links {
-            display: none;
-            /* Hidden by default */
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 5px;
-            padding: 10px;
-            z-index: 999;
+            display: flex;
+            gap: 20px; /* Space between links */
         }
 
         .nav-links a {
@@ -146,28 +48,156 @@
 
         .nav-links a:hover {
             background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
         }
 
-        .profile-pic {
-            width: 150px;
-            /* Set the width of the profile picture */
-            height: auto;
-            /* Maintain aspect ratio */
-            border-radius: 50%;
-            /* Make it circular */
-            position: absolute;
-            /* Position it absolutely */
-            right: 20px;
-            /* Distance from the right */
-            top: 20px;
-            /* Distance from the top */
+        .content {
+            flex: 1;
+            padding: 20px;
+            padding-top: 70px; /* Adjusted padding to account for fixed header */
+            animation: fadeIn 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: margin-top 0.3s ease;
+            position: relative; /* Changed to relative */
+            z-index: 1; /* Ensure content is above the nav */
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #ffffff; /* Caret */
+            animation: blink-caret 0.75s step-end infinite; /* Blinking caret */
+        }
+
+        .highlight {
+            color: #f0e00a;
+            display: inline-block; /* Ensure it behaves like an inline element */
+            transition: width 0.3s ease; /* Smooth transition for width */
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #ffffff;
+            }
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px auto;
+            text-align: center;
+            color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Optional shadow for better appearance */
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            gap: 70px; /* Set gap to 70px */
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f0e00a; /* Change color on hover */
+        }
+
+        .hamburger {
+            display: none; /* Hide by default */
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+            padding: 10px; /* Add padding around the button */
+            background-color: rgba(0, 0, 0, 0.5); /* Background color */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        .hamburger:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+        }
+
+        .bar {
+            height: 4px; /* Increased height for better visibility */
+            width: 30px;
+            background-color: #ffffff;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        .nav-links-mobile {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 999;
+        }
+
+        .nav-links-mobile a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links-mobile a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex; /* Show hamburger button on mobile */
+            }
+
+            .desktop-header {
+                display: none; /* Hide desktop header on mobile */
+            }
+
             .content h1 {
-                font-size: 2em;
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 1rem;
             }
 
             .card {
@@ -176,42 +206,62 @@
             }
         }
 
+        @media (min-width: 769px) {
+            .desktop-header {
+                display: flex; /* Show desktop header on larger screens */
+            }
+
+            .hamburger {
+                display: none; /* Hide hamburger button on desktop */
+            }
+        }
+
         @media (max-width: 480px) {
             .content h1 {
-                font-size: 1.5em;
+                font-size: 1.5rem;
+            }
+
+            .content p {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 
 <body>
+    <header class="desktop-header">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="resume.html">Resume</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">About Me</a>
+    <div class="nav-links-mobile" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
         <a href="resume.html">Resume</a>
-        <a href="blog.html">Blogs</a>
+        <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </div>
     <div class="content" id="content">
         <h1 id="typing-animation">I am <span class="highlight"></span></h1>
         <div class="card">
-            <h3>About Me</h3>
-            <p>I am a passionate Data Scientist, MLOps Engineer, and DevOps Engineer with expertise in developing,
-                deploying, and managing machine learning models and scalable systems. I excel in building end-to-end
-                data
-                pipelines, implementing CI/CD workflows, and automating model lifecycle management. Proficient in tools
-                like
-                Docker, Kubernetes, and cloud platforms, I bridge the gap between data science and operations to deliver
-                robust, production-ready solutions. My work focuses on harnessing data-driven insights and optimizing
-                system
-                reliability to drive impactful outcomes.</p>
+            <h3>Connect with Me</h3>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://medium.com" target="_blank"><i class="fab fa-medium"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-        <!-- Add your profile picture here -->
     </div>
     <script>
         const phrases = ["Data scientist.", "MlOps Engineer.", "DevOps engineer."];
