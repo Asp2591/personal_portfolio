@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Simone Olivia</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 40px 0 20px; /* Adjust the top margin as needed */
+            border-right: 2px solid #00ff7f;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(15, end), wave 1s infinite alternate, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #00ff7f;
+            }
+        }
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .blog-post {
+            background-color: #222;
+            border: 2px solid #00ff7f;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            width: 450px;
+            height: auto;
+            text-align: center;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.02);
+        }
+
+        .blog-post img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .blog-post h2 {
+            margin: 10px;
+            font-size: 1.5em;
+        }
+
+        .blog-post a {
+            display: inline-block;
+            background-color: #138882;
+            color: #111;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px auto;
+            transition: background-color 0.3s;
+            width: 100px;
+            text-align: center;
+        }
+
+        .blog-post a:hover {
+            background-color: #04efc4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="typing-header">My Blogs</h1>
+
+    <div class="blog-container">
+        <div class="blog-post">
+            <img src="images/Blog1.png" alt="Blog Post 1">
+            <h2><a href="https://medium.com/@atharvapatkar/infrastructure-automation-with-face-recognizer-ddf0bad53a76"
+                    target="_blank">Read</a></h2>
+        </div>
+
+        <div class="blog-post">
+            <img src="images/Blog2.png" alt="Blog Post 2">
+            <h2><a href="https://medium.com/@atharvapatkar/apache-airflow-with-ec2-amazon-linux-67b3692843db"
+                    target="_blank">Read</a></h2>
+        </div>
+        
+        <!-- Uncomment and add more blog posts as needed -->
+        <!-- <div class="blog-post">
+            <img src="./blog3.png" alt="Blog Post 3">
+            <h2><a href="https://medium.com/@yourusername/your-third-blog-post" target="_blank">Read</a></h2>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
