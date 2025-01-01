@@ -12,14 +12,15 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column; /* Allow content to stack vertically */
             min-height: 100vh;
-            overflow: hidden; /* Prevent scrollbars */
-            font-family: 'Roboto', sans-serif; /* Professional font */
-            color: #fcf3f3; /* Light text color */
-            position: relative; /* Position relative for absolute children */
-            background-image: url("images/bg.png"); /* Set your background image here */
-            background-size: cover; /* Cover the entire area */
-            background-position: center; /* Center the background image */
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            color: #fcf3f3;
+            position: relative;
+            background-image: url("images/bg.png");
+            background-size: cover;
+            background-position: center;
         }
 
         .content {
@@ -30,32 +31,38 @@
             flex-direction: column;
             align-items: center; /* Center content horizontally */
             justify-content: center; /* Center content vertically */
+            text-align: center; /* Center text within the content */
+            transition: margin-top 0.3s ease; /* Smooth transition for margin */
         }
 
         .content h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #ffffff; /* White for main heading */
+            color: #ffffff;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #ffffff;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        .highlight {
+            color: #bb86fc;
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #ffffff;
+            }
         }
 
         .content p {
             font-size: 1.2em;
-            color: #e0e0e0; /* Light text color */
-        }
-
-        .content button {
-            background-color: #bb86fc; /* Light purple button */
-            border: none;
-            border-radius: 5px;
-            color: #121212; /* Dark text color */
-            font-size: 1.2em;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .content button:hover {
-            background-color: #9a67ea; /* Darker purple on hover */
+            color: #e0e0e0;
         }
 
         @keyframes fadeIn {
@@ -72,11 +79,12 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
-            margin: 10px;
+            margin: 10px auto; /* Center the card */
             text-align: center;
             color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px; /* Set a fixed width for the card */
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Maximum width */
         }
 
         .card a {
@@ -93,112 +101,91 @@
         .contact-info {
             margin-top: 10px;
             font-size: 0.9em;
+            color: #e0e0e0;
         }
 
-        /* Hamburger Menu Styles */
         .hamburger {
-            display: flex; /* Show hamburger by default */
+            display: flex;
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            left: 20px; /* Position on the left */
-            top: 20px; /* Position from the top */
-            z-index: 1000; /* Ensure it is above other content */
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
         }
 
         .bar {
             height: 3px;
             width: 30px;
-            background-color: #ffffff; /* Color of the hamburger bars */
+            background-color: #ffffff;
             margin: 3px 0;
-            transition: 0.4s; /* Animation for the bars */
+            transition: 0.4s;
         }
 
         .nav-links {
             display: none; /* Hidden by default */
             flex-direction: column;
             position: absolute;
-            top: 60px; /* Position below the hamburger */
-            left: 20px; /* Align to the left */
-            background-color: rgba(0, 0, 0, 0.7); /* Background color for the menu */
+            top: 60px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 5px;
             padding: 10px;
-            z-index: 999; /* Ensure it is above other content */
+            z-index: 999;
         }
 
         .nav-links a {
-            color: #ffffff; /* Link color */
+            color: #ffffff;
             text-decoration: none;
             padding: 10px;
             transition: background-color 0.3s ease;
         }
 
         .nav-links a:hover {
- background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+            background-color: rgba(255, 255, 255, 0.2 );
         }
 
-        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .content h1 {
-                font-size: 2em; /* Smaller heading on mobile */
-            }
-
-            .content p {
-                font-size: 1em; /* Smaller paragraph text */
-            }
-
-            .content button {
-                font-size: 1em; /* Smaller button text */
-                padding: 8px 16px; /* Adjust button padding */
+                font-size: 2em;
             }
 
             .card {
-                width: 90%; /* Full width on mobile */
-                margin: 10px auto; /* Center card */
-            }
-
-            .hamburger {
-                left: 10px; /* Adjust hamburger position */
-                top: 10px; /* Adjust hamburger position */
-            }
-
-            .nav-links {
-                top: 50px; /* Adjust position for mobile */
-                left: 10px; /* Align to the left */
+                width: 90%;
+                margin: 10px auto;
             }
         }
 
         @media (max-width: 480px) {
             .content h1 {
-                font-size: 1.5em; /* Even smaller heading */
-            }
-
-            .content p {
-                font-size: 0.9em; /* Smaller paragraph text */
-            }
-
-            .content button {
-                font-size: 0.9em; /* Smaller button text */
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
     <div class="nav-links" id="navLinks">
-        <a href="home.html">About Me</a>
+        <a href="index.html">About Me</a>
         <a href="resume.html">Resume</a>
         <a href="blog.html">Blogs</a>
     </div>
-    <div class="content">
-        <h1 id="portfolio">My Portfolio</h1>
-        <p>This is a brief introduction about my work and skills.</p>
-        <button>View More</button>
+    <div class="content" id="content">
+        <h1 id="typing-animation">I am <span class="highlight"></span></h1>
+        <div class="card">
+            <h3>About Me</h3>
+            <p>I am a passionate Data Scientist, MLOps Engineer, and DevOps Engineer with expertise in developing,
+                deploying, and managing machine learning models and scalable systems. I excel in building end-to-end data
+                pipelines, implementing CI/CD workflows, and automating model lifecycle management. Proficient in tools like
+                Docker, Kubernetes, and cloud platforms, I bridge the gap between data science and operations to deliver
+                robust, production-ready solutions. My work focuses on harnessing data-driven insights and optimizing system
+                reliability to drive impactful outcomes.</p>
+        </div>
         <h2>Contact Information</h2>
         <div class="card">
             <h3>Connect with Me</h3>
@@ -212,14 +199,50 @@
         </div>
     </div>
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
+        const phrases = ["Data scientist.", "MlOps Engineer.", "DevOps engineer."];
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const typingElement = document.getElementById('typing-animation');
+            const highlightElement = typingElement.querySelector('.highlight');
+            const currentPhrase = phrases[currentPhraseIndex];
+
+            if (isDeleting) {
+                highlightElement.textContent = currentPhrase.substring(0, currentCharIndex--);
+                if (currentCharIndex < 0) {
+                    isDeleting = false;
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, 100);
+                }
             } else {
-                navLinks.style.display = 'flex';
+                highlightElement.textContent = currentPhrase.substring(0, currentCharIndex++);
+                if (currentCharIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                } else {
+                    setTimeout(type, 100);
+                }
             }
         }
+
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            const content = document.getElementById('content');
+            if (navLinks.style.display === "flex") {
+                navLinks.style.display = "none";
+                content.style.marginTop = "0"; // Reset margin when nav is hidden
+            } else {
+                navLinks.style.display = "flex";
+                content.style.marginTop = "200px"; // Adjust margin to push content down
+            }
+        }
+
+        // Start the typing animation
+        type();
     </script>
 </body>
 
