@@ -4,65 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Atharva Patkar</title>
+    <title>Resume - Your Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #111;
-            color: #fff;
-            font-family: sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 20px;
-            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         h1 {
-            font-size: 2.5em;
+            text-align: center;
+            color: #2c3e50;
+            opacity: 0; /* Start hidden */
+            transform: translateY(-20px); /* Start slightly above */
+            animation: slideDown 0.5s forwards; /* Animation */
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1; /* Fade in */
+                transform: translateY(0); /* Move to original position */
+            }
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+
+        .section {
             margin-bottom: 20px;
         }
 
-        .resume-image {
-            display: block;
-            margin: 20px auto;
-            width: 100%; /* Make the image responsive */
-            max-width: 500px; /* Set a maximum width */
-            border: 2px solid #138882;
-            border-radius: 10px;
+        .section p {
+            margin: 5px 0;
         }
 
-        a {
-            display: inline-block;
-            background-color: #138882;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
+        .skills-list, .experience-list, .projects-list, .achievements-list {
+            list-style-type: none;
+            padding: 0;
         }
 
-        a:hover {
-            background-color: #17a396;
+        .skills-list li, .experience-list li, .projects-list li, .achievements-list li {
+            background: #e7f3fe;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
         }
 
-        /* Responsive styles */
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .education-table th, .education-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .education-table th {
+            background-color: #f2f2f2;
+        }
+
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2em; /* Adjust font size for smaller screens */
+            body {
+                padding: 10px;
             }
 
-            a {
-                font-size: 1em; /* Adjust button font size */
-                padding: 8px 16px; /* Adjust button padding */
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .container {
+                padding: 15px;
             }
         }
     </style>
 </head>
 
 <body>
-    <h1>My Resume</h1>
-    <img src="images/resume.png" alt="Resume Image" class="resume-image">
-    <a href="./resume.pdf" target="_blank" download>Download Resume</a>
+    <div class="container">
+        <h1>Resume</h1>
+        <div class="section">
+            <h2>Education</h2>
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Degree</th>
+                        <th>Institute</th>
+                        <th>GPA/Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2019-2023</td>
+                        <td>B.Tech</td>
+                        <td>Kitcoek, Kolhapur</td>
+                        <td>7.88/10</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>HSC</td>
+                        <td>G.A. College, Sangli</td>
+                        <td>71.57%</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>SSC</td>
+                        <td>G.A. High School, Sangli</td>
+                        <td>86.80%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li><strong>Languages:</strong> Python 3, C, C++</li>
+                <li><strong>DevOps Tools:</strong> Terraform, Docker, Kubernetes, Ansible, Jenkins, Git and GitHub, Prometheus, Graf ana</li>
+                <li><strong >Data Science:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Prompt Design, Fine Tuning, LoRA, QLoRA, PyTorch, TensorFlow, Generative AI, RAG</li>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript, Flask, FastAPI, Bootstrap</li>
+                <li><strong>Cloud Platforms:</strong> AWS</li>
+                <li><strong>Databases:</strong> MySQL</li>
+                <li><strong>Operating Systems:</strong> Linux</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <strong>Eiminence Institute</strong> - Sangli (Feb 2024 – Dec 2024)
+                    <p><strong>Role:</strong> M LOps Intern</p>
+                    <p>Successfully completed an internship in DevOps and MLOps, gaining hands-on experience with cloud platforms as well.</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li><strong>Cloud Platform:</strong> AWS</li>
+                        <li><strong>DevOps:</strong> Implemented and optimized CI/CD pipelines using tools like Docker, Kubernetes, Jenkins, Ansible, Terraform. Automated deployment processes, reducing deployment time by 30% and enhancing system reliability.</li>
+                        <li><strong>MLOps:</strong> Integrated machine learning workflows into production environments using MLflow and Kubeflow. Streamlined model development, deployment, and monitoring for increased efficiency and scalability.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Job Title</strong> - Company Name (Month Year - Month Year)
+                    <p>Description of your responsibilities and achievements during the job.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul class="projects-list">
+                <li>
+                    <strong>Cloud Infrastructure Automation with Face Detection</strong> (Apr 2024 – May 2024)
+                    <p>Developed a face detection model with over 85% accuracy to authenticate users and automate infrastructure provisioning.</p>
+                    <ul>
+                        <li>Written a Terraform script to launch AWS EC2 instances and attach EBS volumes upon user identification.</li>
+                        <li>Enhanced security for larger projects by integrating facial recognition as a prerequisite for infrastructure automation.</li>
+                        <li>This approach can also be applied to larger projects to enhance security, with the capability to send email and WhatsApp notifications to users.</li>
+                    </ul>
+                    <p><strong>Tech used:</strong> Face detection model (Haar-cascade), Terraform, AWS</p>
+                </li>
+                <li>
+                    <strong>Logo Maker Using LLM</strong> (May 2024 – June 2024)
+                    <p>Created an AI-powered logo generation tool leveraging Large Language Models (LLMs) to transform text prompts into visually compelling logos, with dynamic customization options for style, color, and themes to meet industry-specific branding needs.</p>
+                    <ul>
+                        <li>Optimized performance through advanced prompt engineering techniques, enhancing the precision and relevance of generated designs to align with user expectations.</li>
+                        <li>Engineered a containerized architecture using Docker and automated CI/CD pipelines with Jenkins and GitHub webhooks, ensuring seamless scalability, portability, and efficient deployment across diverse environments.</li>
+                        <li>Streamlined workflows by automating the logo creation process, enabling businesses and individuals to achieve professional-grade designs rapidly and cost-effectively.</li>
+                    </ul>
+                    <p><strong>Technologies used:</strong> LLM model, Docker, Kubernetes, Jenkins, FastAPI</p>
+                </li>
+                <li>
+                    <strong>Multimodal RAG Chatbot</strong> (June 2024 – Aug 2024)
+                    <p>Planned and executed a project to fine-tune a Large Language Model (LLM) for enhanced performance in domain-specific tasks.</p>
+                    <ul>
+                        <li>Applied transfer learning to adapt the base model to custom datasets, improving accuracy and contextual relevance.</li>
+                        <li>Utilized Hugging Face Transformers and PyTorch for seamless model fine-tuning and evaluation.</li>
+                        <li>Used grounding technique to fetch internet links and context, YouTube videos to do it multimodal output.</li>
+                        <li>Upgraded deployment by containerizing the model with Docker and orchestrating scalable deployments using Kubernetes, integrating MLOps tools to automate workflows and ensure robust model lifecycle management.</li>
+                    </ul>
+                    <p><strong>Tools used:</strong> LLM model, Docker, Kubernetes, RAG, Faiss vectorDB</p>
+                </li>
+                <li>
+                    <strong>Constructed Infrastructure for AI Application</strong> (Sept 2024 – Nov 2024)
+                    <p>Designed and implemented scalable infrastructure using AWS EC2 for hosting applications and Docker for containerization.</p>
+                    <ul>
+                        <li>Orchestrated deployments with Kubernetes and automated event-driven scaling using KEDA.</li>
+                        <li>Integrated AWS SQS for message queuing and decoupling microservices.</li>
+                        <li>Built secure, high-performance APIs with AWS API Gateway, ensuring seamless communication between components.</li>
+                        <li>Leveraged CI/CD pipelines for efficient deployments and monitored infrastructure using CloudWatch and Prometheus.</li>
+                        <li>Streamlined workflows to optimize resource utilization, enhance application scalability, and ensure high availability across production environments.</li>
+                    </ul>
+                    <p><strong>Components:</strong> EC2 instance, Docker container, Kubernetes (KEDA), AWS SQS, AWS API Gateway, Prometheus</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Achievements/Extracurricular Activities</h2>
+            <ul class="achievements-list">
+                <li>
+                    <strong>CESSA Club:</strong>
+                    <p>Conducted coding workshops and mentoring sessions to support junior students in improving their programming skills. Collaborated with external organizations for guest lectures and coding events, helping expand the club's outreach and knowledge-sharing initiatives.</p>
+                </li>
+                <li>
+                    <strong>Accenture North America Data Analytics and Visualization Job Simulation on Forage - June 2024:</strong>
+                    <p>Completed a simulation focused on advising a hypothetical social media client as a Data Analyst at Accenture. Cleaned, modeled, and analyzed 7 datasets to uncover insights into content trends to inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate key insights for the client and internal stakeholders.</p>
+                </li>
+                <li>
+                    <strong>Award:</strong> Awarded as ‘Ideal Student of the Year 2016-2017’.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            const h1 = document.querySelector('h1');
+            h1.style.animation = 'slideDown 0.5s forwards';
+        };
+    </script>
 </body>
 
 </html>

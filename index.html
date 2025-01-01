@@ -6,99 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('images/bg.png'); /* Add your background image URL here */
-            background-size: cover; /* Cover the entire area */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent repeating */
-            color: #110505; /* Light text color */
-            font-family: 'Roboto', sans-serif; /* Professional font */
             margin: 0;
             padding: 0;
             display: flex;
             min-height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            flex: 1;
-        }
-
-        .sidebar {
-            background-color: #0f87a8; /* Darker sidebar */
-            width: 250px;
-            padding: 20px;
-            animation: slideDown 1s ease-out forwards;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .sidebar img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease;
-        }
-
-        .sidebar h1 {
-            margin-top: 0;
-            font-size: 1.5em; /* Adjusted font size */
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            color: #090312; /* Light purple for links */
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-            padding: 10px 20px;
-            border-radius: 5px; /* Rounded corners */
-        }
-
-        .sidebar a:hover {
-            color: #ffffff; /* White on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-        }
-
-        .sidebar a::after {
-            content: '';
-            position: absolute;
-            right: 10px; /* Position the arrow */
-            top: 50%;
-            transform: translateY(-50%);
-            border: solid transparent;
-            border-width: 5px 0 5px 10px; /* Arrow shape */
-            border-left-color: #090312; /* Arrow color */
-            opacity: 0.7; /* Slightly transparent */
+            overflow: hidden; /* Prevent scrollbars */
+            font-family: 'Roboto', sans-serif; /* Professional font */
+            color: #fcf3f3; /* Light text color */
+            position: relative; /* Position relative for absolute children */
+            background-image: url("images/bg.png"); /* Set your background image here */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the background image */
         }
 
         .content {
             flex: 1;
             padding: 20px;
             animation: fadeIn 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
         }
 
         .content h1 {
@@ -137,77 +68,159 @@
             }
         }
 
-        /* Responsive Design */
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Set a fixed width for the card */
+        }
+
+        .card a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .card i {
+            font-size: 2em;
+            margin: 10px;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: flex; /* Show hamburger by default */
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px; /* Position on the left */
+            top: 20px; /* Position from the top */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+
+        .bar {
+            height: 3px;
+            width: 30px;
+            background-color: #ffffff; /* Color of the hamburger bars */
+            margin: 3px 0;
+            transition: 0.4s; /* Animation for the bars */
+        }
+
+        .nav-links {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Position below the hamburger */
+            left: 20px; /* Align to the left */
+            background-color: rgba(0, 0, 0, 0.7); /* Background color for the menu */
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 999; /* Ensure it is above other content */
+        }
+
+        .nav-links a {
+            color: #ffffff; /* Link color */
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+ background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+        }
+
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                text-align: center;
-            }
-
-            .container {
-                flex-direction: column;
-            }
-
-            .sidebar img {
-                width: 80px;
-                height: 80px;
-            }
-
-            .content {
-                padding: 10px;
-            }
-
             .content h1 {
-                font-size: 2em;
+                font-size: 2em; /* Smaller heading on mobile */
             }
 
             .content p {
-                font-size: 1em;
+                font-size: 1em; /* Smaller paragraph text */
             }
 
             .content button {
-                font-size: 1em;
+                font-size: 1em; /* Smaller button text */
+                padding: 8px 16px; /* Adjust button padding */
+            }
+
+            .card {
+                width: 90%; /* Full width on mobile */
+                margin: 10px auto; /* Center card */
+            }
+
+            .hamburger {
+                left: 10px; /* Adjust hamburger position */
+                top: 10px; /* Adjust hamburger position */
+            }
+
+            .nav-links {
+                top: 50px; /* Adjust position for mobile */
+                left: 10px; /* Align to the left */
             }
         }
 
         @media (max-width: 480px) {
             .content h1 {
-                font-size: 1.8em;
+                font-size: 1.5em; /* Even smaller heading */
             }
 
             .content p {
-                font-size: 0.9em;
+                font-size: 0.9em; /* Smaller paragraph text */
             }
 
             .content button {
-                font-size: 0.9em;
-                padding: 8px 16px;
+                font-size: 0.9em; /* Smaller button text */
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <img src="profile.jpg" alt="Profile Picture">
-            <h1>Welcome</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="content">
-            <h1 id="portfolio">My Portfolio</h1>
-            <p>This is a brief introduction about my work and skills.</p>
-            <button>View More</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="#about">About Me</a>
+        <a href="#resume">Resume</a>
+        <a href="#blogs">Blogs</a>
+    </div>
+    <div class="content">
+        <h1 id="portfolio">My Portfolio</h1>
+        <p>This is a brief introduction about my work and skills.</p>
+        <button>View More</button>
+        <h2>Contact Information</h2>
+        <div class="card">
+            <h3>Connect with Me</h3>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://medium.com" target="_blank"><i class="fab fa-medium"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <div class="contact-info">
+                <p>Email: example@example.com</p>
+                <p>Contact: +1234567890</p>
+            </div>
         </div>
     </div>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 
 </html>
