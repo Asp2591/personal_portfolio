@@ -73,8 +73,7 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 4px solid #ffffff; /* Caret */
-            animation: blink-caret 0.75s step-end infinite; /* Blinking caret */
-        }
+            animation: blink-caret 0.75s step-end infinite; /* Blinking caret }
 
         .highlight {
             color: #f0e00a;
@@ -201,8 +200,18 @@
             }
 
             .card {
-                width: 90%;
-                margin: 10px auto;
+                width: 90%; /* Make cards take up more width on mobile */
+                margin: 10px auto; /* Center cards */
+            }
+
+            .social-icons {
+                flex-direction: column; /* Stack icons vertically on smaller screens */
+                align-items: center; /* Center align icons */
+                gap: 10px; /* Space between icons */
+            }
+
+            .social-icons a {
+                font-size: 1.2em; /* Adjust icon size for mobile */
             }
         }
 
@@ -218,11 +227,15 @@
 
         @media (max-width: 480px) {
             .content h1 {
-                font-size: 1.5rem;
+                font-size: 1.5rem; /* Smaller heading size for very small screens */
             }
 
             .content p {
-                font-size: 0.9rem;
+                font-size: 0.9rem; /* Smaller paragraph size for very small screens */
+            }
+
+            .social-icons a {
+                font-size: 1.5em; /* Increase icon size for better touch targets */
             }
         }
     </style>
