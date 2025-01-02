@@ -25,16 +25,25 @@
             margin-bottom: 20px; /* Adjusted margin for better spacing */
         }
 
-        .projects, .blog {
+        .projects,
+        .blog {
             margin: 20px 0; /* Added margin above and below the sections */
             display: flex;
             align-items: center;
             font-size: 1.5em;
         }
 
-        .projects i, .blog i {
+        .projects i,
+        .blog i {
             margin-right: 10px; /* Space between icon and text */
-            color: #00ff7f; /* Icon color */
+            color: #ecf1f3; /* Icon color */
+        }
+
+        .line {
+            width: 30%; /* Full width */
+            height: 4px; /* Line thickness */
+            background-color: #00ff7f; /* Line color */
+            margin: 10px 0; /* Margin above and below the line */
         }
 
         .card-container {
@@ -46,13 +55,18 @@
 
         .card {
             background-color: #222;
-            border: 2px solid #00ff7f;
-            border-radius: 5px;
+            border: 3px solid rgba(12, 12, 12, 0.8);
+            border-radius: 25px;
             overflow: hidden;
             transition: transform 0.3s;
-            width: 200px; /* Fixed width for cards */
+            width: 190px; /* Fixed width for cards */
             text-align: center;
             cursor: pointer; /* Change cursor to pointer */
+            font-size: medium;
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: space-between; /* Space out children */
+            min-height: 200px; /* Set a minimum height for the card */
         }
 
         .card:hover {
@@ -68,6 +82,22 @@
         .card h2 {
             margin: 10px;
             font-size: 1.5em;
+            flex-grow: 1; /* Allow the title to take up available space */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflow text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            max-height: 2.5em; /* Limit height to 2 lines */
+        }
+
+        .card button {
+            background-color: rgb(18 206 231 / 96%);
+            color: #111;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 10px; /* Add margin to the bottom */
         }
 
         /* Responsive Styles */
@@ -76,7 +106,8 @@
                 font-size: 2em; /* Smaller font size for mobile */
             }
 
-            .projects, .blog {
+            .projects,
+            .blog {
                 font-size: 1.2em; /* Smaller font size for section texts */
             }
 
@@ -84,8 +115,9 @@
                 width: 150px; /* Smaller width for mobile */
             }
 
-            .card h2 {
+            . card h2 {
                 font-size: 1.2em; /* Smaller font size for card titles */
+                max-height: 2em; /* Limit height for mobile */
             }
         }
     </style>
@@ -98,68 +130,72 @@
         <i class="fas fa-folder"></i> <!-- Font Awesome folder icon -->
         <span>Projects</span>
     </div>
+    <div class="line"></div> <!-- Line below Projects -->
 
     <div class="card-container">
         <div class="card" onclick="window.location.href='https://github.com/yourusername/project1';">
-            <button style="background-color: #00ff7f; color: #111; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1.2em;">
-                <i class="fas fa-cogs"></i> Infrastructure automation using face 
+            <img src="../images/infraFace.png" alt="Project 1">
+            <h2>Infrastructure automation using face</h2>
+            <button>
+                <i class="fas fa-cogs"></i> View Project
             </button>
         </div>
-    
+
         <div class="card" onclick="window.location.href='https://github.com/yourusername/project2';">
-            <button style="background-color: #00ff7f; color: #111; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1.2em;">
-                <i class="fas fa-paint-brush"></i> Logo maker using LLM
+            <img src="../images/logomaker.png" alt="Project 2">
+            <h2>Logo maker using LLM</h2>
+            <button>
+                <i class="fas fa-paint-brush"></i> View Project
             </button>
         </div>
-    
+
         <div class="card" onclick="window.location.href='https://github.com/yourusername/project3';">
-            <button style="background-color: #00ff7f; color: #111; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1.2em;">
-                <i class="fas fa-comments"></i> Multimodal RAG Chatbot
+            <img src="../images/RAG_chatbot.png" alt="Project 3">
+            <h2>Multimodal RAG Chatbot</h2>
+            <button>
+                <i class="fas fa-comments"></i> View Project
             </button>
         </div>
-    
+
         <div class="card" onclick="window.location.href='https://github.com/yourusername/project4';">
-            <button style="background-color: #00ff7f; color: #111; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1.2em;">
-                <i class="fas fa-eye"></i> AI Object Detector 
+            <img src="../images/AI_Object.png" alt="Project 4">
+            <h2>AI Object Detector</h2>
+            <button>
+                <i class="fas fa-eye"></i> View Project
             </button>
         </div>
-    
+
         <div class="card" onclick="window.location.href='https://github.com/yourusername/project5';">
-            <button style="background-color: #00ff7f; color: #111; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1.2em;">
-                <i class="fas fa-volume-up"></i> AI audio generator
+            <img src="../images/audio.png" alt="Project 5">
+            <h2>AI audio generator</h2>
+            <button>
+                <i class="fas fa-volume-up"></i> View Project
             </button>
         </div>
     </div>
+    
     <div class="blog">
         <i class="fas fa-pencil-alt"></i> <!-- Font Awesome pencil icon -->
         <span>Blog</span>
     </div>
+    <div class="line"></div> <!-- Line below Blog -->
 
     <div class="card-container">
         <div class="card" onclick="window.location.href='https://medium.com/@atharvapatkar/apache-airflow-with-ec2-amazon-linux-67b3692843db';">
             <img src="../images/Blog1.png" alt="Blog Post 1">
-            <h2>Blog Post 1</h2>
+            <!-- <h2>Blog Post 1</h2> -->
+            <button>
+                <i class="fas fa-link"></i> Read More
+            </button>
         </div>
 
         <div class="card" onclick="window.location.href='https://medium.com/@atharvapatkar/infrastructure-automation-with-face-recognizer-ddf0bad53a76';">
             <img src="../images/Blog2.png" alt="Blog Post 2">
-            <h2>Blog Post 2</h2>
+            <!-- <h2>Blog Post 2</h2> -->
+            <button>
+                <i class="fas fa-link"></i> Read More
+            </button>
         </div>
-
-        <!-- <div class="card" onclick="window.location.href='https://medium.com/@yourusername/post3';">
-            <img src="https://via.placeholder.com/200x150" alt="Blog Post 3">
-            <h2>Blog Post 3</h2>
-        </div>
-
-        <div class="card" onclick="window.location.href='https://medium.com/@yourusername/post4';">
-            <img src="https://via.placeholder.com/200x150" alt="Blog Post 4">
-            <h2>Blog Post 4</h2>
-        </div>
-
-        <div class="card" onclick="window.location.href='https://medium.com/@yourusername/post5';">
-            <img src="https://via.placeholder.com/200x150" alt="Blog Post 5">
-            <h2>Blog Post 5</h2>
-        </div> -->
     </div>
 
 </body>
