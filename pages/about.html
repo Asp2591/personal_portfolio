@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - MLOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../images/bg.png'); /* Add your background image here */
+            background-size: cover; /* Cover the entire body */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            margin: 0;
+            padding: 20px;
+            color: #fff; /* Change text color to white for better contrast */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .card {
+            background: rgba(29, 22, 22, 0.9); /* Semi-transparent white background for the card */
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #007BFF; /* Add a border to the profile picture */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 10px 0;
+            color: #fefbfb;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #f2ebeb;
+            margin: 5px 0 15px;
+            font-weight: normal;
+        }
+
+        .about-me {
+            font-size: 14px;
+            color: #f3e9e9;
+            margin-bottom: 20px;
+            line-height: 1.6; /* Improve line spacing */
+            text-align: left; /* Align text to the left for better readability */
+        }
+
+        .info {
+            font-size: 14px;
+            color: #f5f0f0;
+            margin-bottom: 20px;
+        }
+
+        .info a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info a:hover {
+            color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+
+        .skills {
+            margin-top: 20px;
+            text-align: left;
+            color: white;
+        }
+
+        .skill {
+            margin: 15px 0;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: bold; /* Make skill names bold */
+        }
+
+        .progress {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 10px;
+            width: 100%;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #007BFF;
+            text-align: center;
+            color: white;
+            line-height: 10px;
+            width: 0;
+            transition: width 2s;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .button i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+            justify-content: center; /* Center the buttons */
+            margin-bottom: 20px; /* Space below the button container */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .about-me {
+                font-size: 12px;
+            }
+
+            .info {
+                font-size: 12px;
+            }
+
+            .skill-name {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="../images/profile.png" alt="Profile Picture" class="profile-pic">
+            <h1>Atharva Patkar</h1>
+            <h2>MLOps Engineer || DevOps Engineer || Data Scientist</h2>
+            <div class="button-container">
+                <button class="button"><i class="fas fa-map-marker-alt"></i> Address</button>
+                <button class="button"><i class="fas fa-map"></i> Location</button>
+                <button class="button"><i class="fas fa-birthday-cake"></i> Birthday</button>
+                <button class="button"><i class="fas fa-graduation-cap"></i> Degree</button>
+                <button class="button"><i class="fas fa-envelope"></i> Email</button>
+                <button class="button"><i class="fas fa-city"></i> City</button>
+            </div>
+            <p class="about-me">
+                I am an experienced MLOps Engineer with a DevOps background who is well-versed in Python backend
+                development and cloud technologies. My desire to use automation, scalability, and efficiency to create
+                meaningful solutions has driven my career in the tech sector. With an eye for streamlining processes and
+                a dedication to remaining on the cutting edge of technology, I work best in fast-paced settings that
+                embrace innovation.
+            </p>
+            <p class="about-me">
+                <strong>MLOps:</strong> My area of expertise is bridging the gap between operations and machine learning
+                development,
+                guaranteeing the smooth deployment, management, and integration of machine learning models at scale. I
+                efficiently and precisely coordinate every step of the machine learning lifecycle, from model training
+                to deployment pipelines and monitoring.
+            </p>
+
+            <p class="about-me">
+
+                <strong>DevOps:</strong> I have extensive experience developing reliable CI/CD pipelines, infrastructure
+                as code, and automation processes, thanks to my experience as a DevOps Engineer. I think that using
+                DevOps concepts may increase teamwork, speed up software delivery, and promote ongoing development.
+            </p>
+            <p class="about-me">
+                <strong>Cloud Technologies:</strong> With knowledge of the main cloud platforms, including AWS, Azure,
+                and GCP, I design robust and scalable cloud solutions that are customized to each project's particular
+                requirements. I make sure that cloud environments are optimized for performance, dependability, and
+                security whether it be through the design of cloud-native apps, infrastructure cost optimization, or the
+                implementation of cutting-edge security measures.
+            </p>
+
+            <p class="about-me">
+                <strong>Python Backend Development:</strong> When it comes to creating the backend solutions that drive
+                contemporary applications, Python is my preferred language. I design and create scalable, stable, and
+                robust backend systems that serve as the foundation for digital goods and services, ranging from
+                microservices architecture to RESTful APIs.
+            </p>
+            <div class="info">
+                <p><strong>Location:</strong> San Francisco, CA</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/johndoe"
+                        target="_blank">linkedin.com/in/johndoe</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a>
+                </p>
+            </div>
+            <div class="skills">
+                <h3>Skills</h3>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Machine Learning</span>
+                        <span class="percentage " data-percentage="90">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Docker</span>
+                        <span class="percentage" data-percentage="85">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Kubernetes</span>
+                        <span class="percentage" data-percentage="80">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span class="percentage" data-percentage="95">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Cloud Computing</span>
+                        <span class="percentage" data-percentage="75">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.percentage').forEach(function (element) {
+            let target = parseInt(element.getAttribute('data-percentage'));
+            let count = 0;
+            let interval = setInterval(function () {
+                if (count < target) {
+                    count++;
+                    element.textContent = count + '%';
+                } else {
+                    clearInterval(interval);
+                }
+            }, 20); // Adjust the speed of the animation here
+        });
+    </script>
+</body>
+
+</html>
