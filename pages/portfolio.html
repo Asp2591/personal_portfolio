@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-color: #111;
+            background: url('../images/bg.png') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
             font-family: sans-serif;
             margin: 0;
@@ -19,76 +20,72 @@
             flex-direction: column;
             min-height: 100vh;
         }
-
+    
         h1 {
             font-size: 2.5em;
-            margin-bottom: 20px; /* Adjusted margin for better spacing */
+            margin-bottom: 20px;
         }
-
-        .projects,
-        .blog {
-            margin: 20px 0; /* Added margin above and below the sections */
+    
+        .section-title {
+            margin: 20px 0;
             display: flex;
             align-items: center;
             font-size: 1.5em;
         }
-
-        .projects i,
-        .blog i {
-            margin-right: 10px; /* Space between icon and text */
-            color: #ecf1f3; /* Icon color */
+    
+        .section-title i {
+            margin-right: 10px;
+            color: #ecf1f3;
         }
-
+    
         .line {
-            width: 30%; /* Full width */
-            height: 4px; /* Line thickness */
-            background-color: #00ff7f; /* Line color */
-            margin: 10px 0; /* Margin above and below the line */
+            width: 30%;
+            height: 4px;
+            background-color: #00ff7f;
+            margin: 10px 0;
         }
-
+    
         .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            justify-items: center;
         }
-
+    
         .card {
-            background-color: #222;
+            background-color: rgba(34, 34, 34, 0.9);
             border: 3px solid rgba(12, 12, 12, 0.8);
             border-radius: 25px;
             overflow: hidden;
             transition: transform 0.3s;
-            width: 190px; /* Fixed width for cards */
             text-align: center;
-            cursor: pointer; /* Change cursor to pointer */
+            cursor: pointer;
             font-size: medium;
             display: flex;
-            flex-direction: column; /* Stack children vertically */
-            justify-content: space-between; /* Space out children */
-            min-height: 200px; /* Set a minimum height for the card */
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            width: 250px;
         }
-
+    
         .card:hover {
             transform: scale(1.05);
         }
-
+    
         .card img {
             width: 100%;
-            height: 150px; /* Fixed height for images */
-            object-fit: cover; /* Maintain aspect ratio */
+            height: 150px;
+            object-fit: cover;
         }
-
+    
         .card h2 {
             margin: 10px;
             font-size: 1.5em;
-            flex-grow: 1; /* Allow the title to take up available space */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add ellipsis for overflow text */
-            white-space: nowrap; /* Prevent text from wrapping */
-            max-height: 2.5em; /* Limit height to 2 lines */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-
+    
         .card button {
             background-color: rgb(18 206 231 / 96%);
             color: #111;
@@ -97,43 +94,39 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.2em;
-            margin-bottom: 10px; /* Add margin to the bottom */
+            margin: 10px auto;
         }
-
+    
         /* Responsive Styles */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Smaller font size for mobile */
+                font-size: 2em;
             }
-
-            .projects,
-            .blog {
-                font-size: 1.2em; /* Smaller font size for section texts */
+    
+            .section-title {
+                font-size: 1.2em;
             }
-
-            .card {
-                width: 150px; /* Smaller width for mobile */
-            }
-
-            .card h2 {
-                font-size: 1.2em; /* Smaller font size for card titles */
-                max-height: 2em; /* Limit height for mobile */
+    
+            .card-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
+    
 </head>
 
 <body>
     <h1>Portfolio</h1>
 
     <div class="projects">
-        <i class="fas fa-folder"></i> <!-- Font Awesome folder icon -->
+        <i class="fas fa-folder"></i>
         <span>Projects</span>
     </div>
-    <div class="line"></div> <!-- Line below Projects -->
+    <div class="line"></div>
 
     <div class="card-container">
-        <div class="card" onclick="window.location.href='https://github.com/yourusername/project1';">
+        <div class="card"
+            onclick="window.location.href='https://github.com/Asp2591/Infrastructure_automation_with_faceRecognizer';">
             <img src="../images/infraFace.png" alt="Project 1">
             <h2>Infrastructure automation using face</h2>
             <button>
@@ -141,7 +134,7 @@
             </button>
         </div>
 
-        <div class="card" onclick="window.location.href='https://github.com/yourusername/project2';">
+        <div class="card" onclick="window.location.href='https://github.com/Asp2591/LogoMakerLLM';">
             <img src="../images/logomaker.png" alt="Project 2">
             <h2>Logo maker using LLM</h2>
             <button>
@@ -149,7 +142,7 @@
             </button>
         </div>
 
-        <div class="card" onclick="window.location.href='https://github.com/yourusername/project3';">
+        <div class="card" onclick="window.location.href='https://github.com/Asp2591/multimodal_rag_chatbot';">
             <img src="../images/RAG_chatbot.png" alt="Project 3">
             <h2>Multimodal RAG Chatbot</h2>
             <button>
@@ -157,7 +150,7 @@
             </button>
         </div>
 
-        <div class="card" onclick="window.location.href='https://github.com/yourusername/project4';">
+        <div class="card" onclick="window.location.href='https://github.com/Asp2591/ai_object_detector';">
             <img src="../images/AI_Object.png" alt="Project 4">
             <h2>AI Object Detector</h2>
             <button>
@@ -165,33 +158,42 @@
             </button>
         </div>
 
-        <div class="card" onclick="window.location.href='https://github.com/yourusername/project5';">
-            <img src="../images/audio.png" alt="Project 5">
-            <h2>AI audio generator</h2>
+        <div class="card" onclick="window.location.href='https://github.com/Asp2591/Credit-card-Analysis-';">
+            <img src="../images/credit.png" alt="Project 5">
+            <h2>Credit card analysis</h2>
             <button>
-                <i class="fas fa-volume-up"></i> View Project
+                <i class="fas fa-chart-line"></i> View Project
+            </button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://github.com/Asp2591/Credit-card-Analysis-';">
+            <img src="../images/Query.png" alt="Project 6">
+            <h2>Querycraft</h2>
+            <button>
+                <i class="fas fa-chart-line"></i> View Project
             </button>
         </div>
     </div>
-    
-    <div class="blog">
-        <i class="fas fa-pencil-alt"></i> <!-- Font Awesome pencil icon -->
+
+    <div class="section-title">
+        <i class="fas fa-pencil-alt"></i>
         <span>Blog</span>
     </div>
-    <div class="line"></div> <!-- Line below Blog -->
+    <div class="line"></div>
 
     <div class="card-container">
-        <div class="card" onclick="window.location.href='https://medium.com/@atharvapatkar/apache-airflow-with-ec2-amazon-linux-67b3692843db';">
+        <div class="card"
+            onclick="window.location.href='https://medium.com/@atharvapatkar/apache-airflow-with-ec2-amazon-linux-67b3692843db';">
             <img src="../images/Blog1.png" alt="Blog Post 1">
-            <!-- <h2>Blog Post 1</h2> -->
+            <h2>Apache Airflow with EC2</h2>
             <button>
                 <i class="fas fa-link"></i> Read More
             </button>
         </div>
-
-        <div class="card" onclick="window.location.href='https://medium.com/@atharvapatkar/infrastructure-automation-with-face-recognizer-ddf0bad53a76';">
+        <div class="card"
+            onclick="window.location.href='https://medium.com/@atharvapatkar/infrastructure-automation-with-face-recognizer-ddf0bad53a76';">
             <img src="../images/Blog2.png" alt="Blog Post 2">
-            <!-- <h2>Blog Post 2</h2> -->
+            <h2>Infrastructure Automation</h2>
             <button>
                 <i class="fas fa-link"></i> Read More
             </button>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -20,7 +21,7 @@
             background-image: url("./images/bg.png");
             background-size: cover;
             background-position: center;
-           
+
         }
 
         header {
@@ -31,13 +32,15 @@
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: center; /* Center the nav links */
+            justify-content: center;
+            /* Center the nav links */
             align-items: center;
         }
 
         .nav-links {
             display: flex;
-            gap: 20px; /* Space between links */
+            gap: 20px;
+            /* Space between links */
         }
 
         .nav-links a {
@@ -55,7 +58,8 @@
         .content {
             flex: 1;
             padding: 20px;
-            padding-top: 70px; /* Adjusted padding to account for fixed header */
+            padding-top: 70px;
+            /* Adjusted padding to account for fixed header */
             animation: fadeIn 1s ease;
             display: flex;
             flex-direction: column;
@@ -63,8 +67,10 @@
             justify-content: center;
             text-align: center;
             transition: margin-top 0.3s ease;
-            position: relative; /* Changed to relative */
-            z-index: 1; /* Ensure content is above the nav */
+            position: relative;
+            /* Changed to relative */
+            z-index: 1;
+            /* Ensure content is above the nav */
         }
 
         .content h1 {
@@ -73,21 +79,28 @@
             color: #ffffff;
             overflow: hidden;
             white-space: nowrap;
-            border-right: 4px solid #ffffff; /* Caret */
-            animation: blink-caret 0.75s step-end infinite; /* Blinking caret */
+            border-right: 4px solid #ffffff;
+            /* Caret */
+            animation: blink-caret 0.75s step-end infinite;
+            /* Blinking caret */
         }
 
         .highlight {
-            color: #f0e00a; /* Yellow color for highlighted text */
-            display: inline-block; /* Ensure it behaves like an inline element */
-            transition: width 0.3s ease; /* Smooth transition for width */
+            color: #d8f30c;
+            /* Yellow color for highlighted text */
+            display: inline-block;
+            /* Ensure it behaves like an inline element */
+            transition: width 0.3s ease;
+            /* Smooth transition for width */
         }
 
         @keyframes blink-caret {
+
             from,
             to {
                 border-color: transparent;
             }
+
             50% {
                 border-color: #ffffff;
             }
@@ -102,6 +115,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -122,7 +136,8 @@
         .social-icons {
             margin-top: 20px;
             display: flex;
-            gap: 70px; /* Set gap to 70px */
+            gap: 70px;
+            /* Set gap to 70px */
         }
 
         .social-icons a {
@@ -132,29 +147,37 @@
         }
 
         .social-icons a:hover {
-            color: #f0e00a; /* Change color on hover */
+            color: #f0e00a;
+            /* Change color on hover */
         }
 
         .hamburger {
-            display: none; /* Hide by default */
+            display: none;
+            /* Hide by default */
             flex-direction: column;
             cursor: pointer;
             position: absolute;
             left: 20px;
             top: 20px;
             z-index: 1000;
-            padding: 10px; /* Add padding around the button */
-            background-color: rgba(0, 0, 0, 0.5); /* Background color */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth background transition */
+            padding: 10px;
+            /* Add padding around the button */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Background color */
+            border-radius: 5px;
+            /* Rounded corners */
+            transition: background-color 0.3s ease;
+            /* Smooth background transition */
         }
 
         .hamburger:hover {
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Darker background on hover */
         }
 
         .bar {
-            height: 4px; /* Increased height for better visibility */
+            height: 4px;
+            /* Increased height for better visibility */
             width: 30px;
             background-color: #ffffff;
             margin: 3px 0;
@@ -162,7 +185,8 @@
         }
 
         .nav-links-mobile {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             flex-direction: column;
             position: absolute;
             top: 60px;
@@ -186,11 +210,13 @@
 
         @media (max-width: 768px) {
             .hamburger {
-                display: flex; /* Show hamburger button on mobile */
+                display: flex;
+                /* Show hamburger button on mobile */
             }
 
             .desktop-header {
-                display: none; /* Hide desktop header on mobile */
+                display: none;
+                /* Hide desktop header on mobile */
             }
 
             .content h1 {
@@ -202,42 +228,53 @@
             }
 
             .card {
-                width: 90%; /* Make cards take up more width on mobile */
-                margin: 10px auto; /* Center cards */
+                width: 90%;
+                /* Make cards take up more width on mobile */
+                margin: 10px auto;
+                /* Center cards */
             }
 
             .social-icons {
-                flex-direction: column; /* Stack icons vertically on smaller screens */
-                align-items: center; /* Center align icons */
-                gap: 10px; /* Space between icons */
+                flex-direction: column;
+                /* Stack icons vertically on smaller screens */
+                align-items: center;
+                /* Center align icons */
+                gap: 10px;
+                /* Space between icons */
             }
 
             .social-icons a {
-                font-size: 1.2em; /* Adjust icon size for mobile */
+                font-size: 1.2em;
+                /* Adjust icon size for mobile */
             }
         }
 
         @media (min-width: 769px) {
             .desktop-header {
-                display: flex; /* Show desktop header on larger screens */
+                display: flex;
+                /* Show desktop header on larger screens */
             }
 
             .hamburger {
-                display: none; /* Hide hamburger button on desktop */
+                display: none;
+                /* Hide hamburger button on desktop */
             }
         }
 
         @media (max-width: 480px) {
             .content h1 {
-                font-size: 1.5rem; /* Smaller heading size for very small screens */
+                font-size: 1.5rem;
+                /* Smaller heading size for very small screens */
             }
 
             .content p {
-                font-size: 0.9rem; /* Smaller paragraph size for very small screens */
+                font-size: 0.9rem;
+                /* Smaller paragraph size for very small screens */
             }
 
             .social-icons a {
-                font-size: 1.5em; /* Increase icon size for better touch targets */
+                font-size: 1.5em;
+                /* Increase icon size for better touch targets */
             }
         }
     </style>
@@ -260,26 +297,57 @@
     </div>
     <div class="nav-links-mobile" id="navLinks">
         <a href="index.html">Home</a>
-            <a href="./pages/about.html">About Me</a>
-            <a href="./pages/resume.html">Resume</a>
-            <a href="./pages/portfolio.html">Portfolio</a>
-            <a href="./pages/contact.html">Contact</a>
+        <a href="./pages/about.html">About Me</a>
+        <a href="./pages/resume.html">Resume</a>
+        <a href="./pages/portfolio.html">Portfolio</a>
+        <a href="./pages/contact.html">Contact</a>
     </div>
+
     <div class="content" id="content">
+        <h2
+            style="font-family: 'Poppins', sans-serif; color: #ffffff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-handshake"> </i> WELCOMED BY ATHARVA PATKAR <i class="fas fa-handshake"> </i>
+
+        </h2>
         <h1 id="typing-animation">I am <span class="highlight"></span></h1>
+        <div
+            style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+            <!-- MLOps Icon -->
+            <div style="text-align: center;">
+                <i class="fas fa-robot" style="font-size: 2rem; color: #e6df83;"></i>
+                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">MLOps</p>
+            </div>
+            <!-- DevOps Icon -->
+            <div style="text-align: center;">
+                <i class="fas fa-code-branch" style="font-size: 2rem; color: #e6df83;"></i>
+                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">DevOps</p>
+            </div>
+            <!-- Data Scientist Icon -->
+            <div style="text-align: center;">
+                <i class="fas fa-chart-line" style="font-size: 2rem; color: #e6df83;"></i>
+                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">Data Scientist</p>
+            </div>
+            <!-- Backend Icon -->
+            <div style="text-align: center;">
+                <i class="fas fa-server" style="font-size: 2rem; color: #e6df83;"></i>
+                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">Backend</p>
+            </div>
+        </div>
         <div class="card">
             <h3>Connect with Me</h3>
             <div class="social-icons">
                 <a href="http://www.linkedin.com/in/atharva--patkar" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/Asp2591 " target="_blank"><i class="fab fa-github"></i></a>
-                <a href="patkaratharva75@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:patkaratharva75@gmail.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://medium.com/@atharvapatkar" target="_blank"><i class="fab fa-medium"></i></a>
                 <a href="https://www.instagram.com/aspatkar_2591/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
+
+
     <script>
-        const phrases = ["Data scientist.", "MlOps Engineer.", "DevOps engineer."];
+        const phrases = ["MlOps Engineer.", "DevOps engineer.", "Data scientist.", "Backend developer."];
         let currentPhraseIndex = 0;
         let currentCharIndex = 0;
         let isDeleting = false;

@@ -11,18 +11,25 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f8f3f3; /* Fallback color */
+            background-color: #f8f3f3;
+            /* Fallback color */
             color: #110f0f;
             background-image: url("../images/bg.png");
-            background-size: cover; /* Cover the entire viewport */
-            background-repeat: no-repeat; /* Prevent the image from repeating */
-            background-position: center; /* Center the image */
+            background-size: cover;
+            /* Cover the entire viewport */
+            background-repeat: no-repeat;
+            /* Prevent the image from repeating */
+            background-position: center;
+            /* Center the image */
+            background-attachment: fixed;
+            /* Ensure background stays fixed while scrolling */
         }
 
         .container {
             max-width: 800px;
             margin: auto;
-            background: rgb(238 240 234); /* Slightly transparent background */
+            background: rgb(238 240 234);
+            /* Slightly transparent background */
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -31,15 +38,20 @@
         h1 {
             text-align: center;
             color: #2c3e50;
-            opacity: 0; /* Start hidden */
-            transform: translateY(-20px); /* Start slightly above */
-            animation: slideDown 0.5s forwards; /* Animation */
+            opacity: 0;
+            /* Start hidden */
+            transform: translateY(-20px);
+            /* Start slightly above */
+            animation: slideDown 0.5s forwards;
+            /* Animation */
         }
 
         @keyframes slideDown {
             to {
-                opacity: 1; /* Fade in */
-                transform: translateY(0); /* Move to original position */
+                opacity: 1;
+                /* Fade in */
+                transform: translateY(0);
+                /* Move to original position */
             }
         }
 
@@ -57,12 +69,20 @@
             margin: 5px 0;
         }
 
-        .skills-list, .experience-list, .projects-list, .achievements-list {
+        .skills-list,
+        .experience-list,
+        .projects-list,
+        .achievements-list,
+        .certification-list {
             list-style-type: none;
             padding: 0;
         }
 
-        .skills-list li, .experience-list li, .projects-list li, .achievements-list li {
+        .skills-list li,
+        .experience-list li,
+        .projects-list li,
+        .achievements-list li,
+        .certification-list li {
             background: #f8f3f3;
             margin: 5px 0;
             padding: 10px;
@@ -75,7 +95,8 @@
             margin-top: 10px;
         }
 
-        .education-table th, .education-table td {
+        .education-table th,
+        .education-table td {
             border: 1px solid #0e100f;
             padding: 8px;
             text-align: left;
@@ -99,29 +120,34 @@
             }
 
             h2 {
-                font-size: 1.5em; /* Adjust heading size */
+                font-size: 1.5em;
             }
 
-            .education-table th, .education-table td {
-                font-size: 14px; /* Adjust table font size */
+            .education-table th,
+            .education-table td {
+                font-size: 14px;
             }
 
-            .skills-list li, .experience-list li, .projects-list li, .achievements-list li {
-                font-size: 14px; /* Adjust list item font size */
+            .skills-list li,
+            .experience-list li,
+            .projects-list li,
+            .achievements-list li,
+            .certification-list li {
+                font-size: 14px;
             }
         }
 
         @media (max-width: 400px) {
             h1 {
-                font-size: 1.5em; /* Smaller heading size for very small screens */
+                font-size: 1.5em;
             }
 
             h2 {
-                font-size: 1.3em; /* Smaller heading size for very small screens */
+                font-size: 1.3em;
             }
 
             .container {
-                padding: 10px; /* Less padding on very small screens */
+                padding: 10px;
             }
         }
     </style>
@@ -168,8 +194,10 @@
             <h2>Skills</h2>
             <ul class="skills-list">
                 <li><strong>Languages:</strong> Python 3, C, C++</li>
-                <li><strong>DevOps Tools:</strong> Terraform, Docker, Kubernetes, Ansible, Jenkins, Git and GitHub, Prometheus, Grafana</li>
-                <li><strong>Data Science:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Prompt Design, Fine Tuning, LoRA, QLoRA, PyTorch, TensorFlow, Generative AI, RAG</li>
+                <li><strong>DevOps Tools:</strong> Terraform, Docker, Kubernetes, Ansible, Jenkins, Git and GitHub,
+                    Prometheus, Grafana</li>
+                <li><strong>Data Science:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Prompt Design,
+                    Fine Tuning, LoRA, QLoRA, PyTorch, TensorFlow, Generative AI, RAG</li>
                 <li><strong>Web Development:</strong> HTML, CSS, JavaScript, Flask, FastAPI, Bootstrap</li>
                 <li><strong>Cloud Platforms:</strong> AWS</li>
                 <li><strong>Databases:</strong> MySQL</li>
@@ -178,23 +206,28 @@
         </div>
 
         <div class="section">
-            <h2>Experience</h2>
+            <h2>Internships/Experience</h2>
             <ul class="experience-list">
                 <li>
                     <strong>Eiminence Institute</strong> - Sangli (Feb 2024 – Dec 2024)
                     <p><strong>Role:</strong> MLOps Intern</p>
-                    <p>Successfully completed an internship in DevOps and MLOps, gaining hands-on experience with cloud platforms as well.</p>
+                    <p>Successfully completed an internship in DevOps and MLOps, gaining hands-on experience with cloud
+                        platforms as well.</p>
                     <p><strong>Responsibilities:</strong></p>
                     <ul>
                         <li><strong>Cloud Platform:</strong> AWS</li>
-                        <li><strong>DevOps:</strong> Implemented and optimized CI/CD pipelines using tools like Docker, Kubernetes, Jenkins, Ansible, Terraform. Automated deployment processes, reducing deployment time by 30% and enhancing system reliability.</li>
-                        <li><strong>MLOps:</strong> Integrated machine learning workflows into production environments using MLflow and Kubeflow. Streamlined model development, deployment, and monitoring for increased efficiency and scalability.</li>
+                        <li><strong>DevOps:</strong> Implemented and optimized CI/CD pipelines using tools like Docker,
+                            Kubernetes, Jenkins, Ansible, Terraform. Automated deployment processes, reducing deployment
+                            time by 30% and enhancing system reliability.</li>
+                        <li><strong>MLOps:</strong> Integrated machine learning workflows into production environments
+                            using MLflow and Kubeflow. Streamlined model development, deployment, and monitoring for
+                            increased efficiency and scalability.</li>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <strong>Job Title</strong> - Company Name (Month Year - Month Year)
                     <p>Description of your responsibilities and achievements during the job.</p>
-                </li>
+                </li> -->
             </ul>
         </div>
 
@@ -202,47 +235,125 @@
             <h2>Projects</h2>
             <ul class="projects-list">
                 <li>
-                    <strong>Cloud Infrastructure Automation with Face Detection</strong> (Apr 2024 – May 2024)
-                    <p>Developed a face detection model with over 85% accuracy to authenticate users and automate infrastructure provisioning.</p>
+                    <strong>Cloud Infrastructure Automation with Face Detection</strong>
+                    <!-- <p></p> -->
                     <ul>
-                        <li>Written a Terraform script to launch AWS EC2 instances and attach EBS volumes upon user identification.</li>
-                        <li>Enhanced security for larger projects by integrating facial recognition as a prerequisite for infrastructure automation.</li>
-                        <li>This approach can also be applied to larger projects to enhance security, with the capability to send email and WhatsApp notifications to users.</li>
+                        <li>Developed a face detection model with over 85% accuracy to authenticate users and automate
+                            infrastructure provisioning.</li>
+                        <li>Written a Terraform script to launch AWS EC2 instances and attach EBS volumes upon user
+                            identification.</li>
+                        <li>Enhanced security for larger projects by integrating facial recognition as a prerequisite
+                            for infrastructure automation.</li>
+                        <li>This approach can also be applied to larger projects to enhance security, with the
+                            capability to send email and WhatsApp notifications to users.</li>
                     </ul>
-                    <p><strong>Tech used:</strong> Face detection model (Haar-cascade), Terraform, AWS</p>
+                    <p><strong>Tools/Technologies used :</strong> Face detection model (Haar-cascade), Terraform, AWS</p>
                 </li>
                 <li>
-                    <strong>Logo Maker Using LLM</strong> (May 2024 – June 2024)
-                    <p>Created an AI-powered logo generation tool leveraging Large Language Models (LLMs) to transform text prompts into visually compelling logos, with dynamic customization options for style, color, and themes to meet industry-specific branding needs.</p>
+                    <strong>Prompt-to-SQL-to-text generator (QueryCraft):</strong>
+                    <!-- <p> </p> -->
                     <ul>
-                        <li>Optimized performance through advanced prompt engineering techniques, enhancing the precision and relevance of generated designs to align with user expectations.</li>
-                        <li>Engineered a containerized architecture using Docker and automated CI/CD pipelines with Jenkins and GitHub webhooks, ensuring seamless scalability, portability, and efficient deployment across diverse environments.</li>
-                        <li>Streamlined workflows by autom ating the logo creation process, enabling businesses and individuals to achieve professional-grade designs rapidly and cost-effectively.</li>
+                        <li>Devised a chatbot using Gemini-Pro LLM, FastAPI, Python, and SQL, deployed on Docker and
+                            hosted on Azure VM, to generate and execute SQL queries from natural language prompts,
+                            improving data accessibility and reducing query creation time by 40%.</li>
+                        <li>Integrated Google Generative AI (Gemini-Pro) and Snowflake connector for customized SQL
+                            query generation, enhancing
+                            data retrieval efficiency.</li>
+                        <li>Built a seamless system for querying Snowflake and formatting results, streamlining data
+                            analysis and reducing manual query
+                            handling.</li>
+                        <li>Created an API with FastAPI and Python to execute and format SQL queries, improving response
+                            times.</li>
+                        <li>Optimized query processing and result presentation, leveraging LLMs for accurate data
+                            summaries.</li>
                     </ul>
-                    <p><strong>Technologies used:</strong> LLM model, Docker, Kubernetes, Jenkins, FastAPI</p>
+                    <p><strong>Tools/Technologies used :</strong> :LLM model, docker, Kubernetes, Jenkins, fastapi,
+                        snowflake,SQL</p>
                 </li>
                 <li>
-                    <strong>Multimodal RAG Chatbot</strong> (June 2024 – Aug 2024)
-                    <p>Planned and executed a project to fine-tune a Large Language Model (LLM) for enhanced performance in domain-specific tasks.</p>
+                    <strong>Logo Maker Using LLM</strong>
+                    <!-- <p></p> -->
                     <ul>
-                        <li>Applied transfer learning to adapt the base model to custom datasets, improving accuracy and contextual relevance.</li>
-                        <li>Utilized Hugging Face Transformers and PyTorch for seamless model fine-tuning and evaluation.</li>
-                        <li>Used grounding technique to fetch internet links and context, YouTube videos to do it multimodal output.</li>
-                        <li>Upgraded deployment by containerizing the model with Docker and orchestrating scalable deployments using Kubernetes, integrating MLOps tools to automate workflows and ensure robust model lifecycle management.</li>
+                        <li>Created an AI-powered logo generation tool leveraging Large Language Models (LLMs) to
+                            transform
+                            text prompts into visually compelling logos, with dynamic customization options for style,
+                            color, and themes to meet industry-specific branding needs.</li>
+                        <li>Optimized performance through advanced prompt engineering techniques, enhancing the
+                            precision and relevance of generated designs to align with user expectations.</li>
+                        <li>Engineered a containerized architecture using Docker and automated CI/CD pipelines with
+                            Jenkins and GitHub webhooks, ensuring seamless scalability, portability, and efficient
+                            deployment across diverse environments.</li>
+                        <li>Streamlined workflows by autom ating the logo creation process, enabling businesses and
+                            individuals to achieve professional-grade designs rapidly and cost-effectively.</li>
                     </ul>
-                    <p><strong>Tools used:</strong> LLM model, Docker, Kubernetes, RAG, Faiss vectorDB</p>
+                    <p><strong>Tools/Technology :</strong> LLM model, Docker, Kubernetes, Jenkins, FastAPI</p>
                 </li>
                 <li>
-                    <strong>Constructed Infrastructure for AI Application</strong> (Sept 2024 – Nov 2024)
-                    <p>Designed and implemented scalable infrastructure using AWS EC2 for hosting applications and Docker for containerization.</p>
+                    <strong>Multimodal RAG Chatbot</strong>
+                    <!-- <p></p> -->
                     <ul>
+                        <li>Planned and executed a project to fine-tune a Large Language Model (LLM) for enhanced
+                            performance
+                            in domain-specific tasks.</li>
+                        <li>Applied transfer learning to adapt the base model to custom datasets, improving accuracy and
+                            contextual relevance.</li>
+                        <li>Utilized Hugging Face Transformers and PyTorch for seamless model fine-tuning and
+                            evaluation.</li>
+                        <li>Used grounding technique to fetch internet links and context, YouTube videos to do it
+                            multimodal output.</li>
+                        <li>Upgraded deployment by containerizing the model with Docker and orchestrating scalable
+                            deployments using Kubernetes, integrating MLOps tools to automate workflows and ensure
+                            robust model lifecycle management.</li>
+                    </ul>
+                    <p><strong>Tools/Technologies used :</strong> LLM model, Docker, Kubernetes, RAG, Faiss vectorDB</p>
+                </li>
+                <li>
+                    <strong>Constructed Infrastructure for AI Application</strong>
+                    <!-- <p></p> -->
+                    <ul>
+                        <li>Designed and implemented scalable infrastructure using AWS EC2 for hosting applications and
+                            Docker for containerization.</li>
                         <li>Orchestrated deployments with Kubernetes and automated event-driven scaling using KEDA.</li>
                         <li>Integrated AWS SQS for message queuing and decoupling microservices.</li>
-                        <li>Built secure, high-performance APIs with AWS API Gateway, ensuring seamless communication between components.</li>
-                        <li>Leveraged CI/CD pipelines for efficient deployments and monitored infrastructure using CloudWatch and Prometheus.</li>
-                        <li>Streamlined workflows to optimize resource utilization, enhance application scalability, and ensure high availability across production environments.</li>
+                        <li>Built secure, high-performance APIs with AWS API Gateway, ensuring seamless communication
+                            between components.</li>
+                        <li>Leveraged CI/CD pipelines for efficient deployments and monitored infrastructure using
+                            CloudWatch and Prometheus.</li>
+                        <li>Streamlined workflows to optimize resource utilization, enhance application scalability, and
+                            ensure high availability across production environments.</li>
                     </ul>
-                    <p><strong>Components:</strong> EC2 instance, Docker container, Kubernetes (KEDA), AWS SQS, AWS API Gateway, Prometheus</p>
+                    <p><strong>Tools/Technologies used :</strong> EC2 instance, Docker container, Kubernetes (KEDA), AWS SQS, AWS API
+                        Gateway, Prometheus</p>
+                </li>
+                <li>
+                    <strong>Credit card financial dashboard using Power BI:</strong>
+                    <!-- <p></p> -->
+                    <ul>
+                        <li>Created an interactive dashboard with real-time analytics using transaction and customer
+                            data from a SQL database.
+                        </li>
+                        <li>Simplified data analysis and processing to track important performance indicators and
+                            patterns.
+                        </li>
+                        <li>Actionable insights were distributed to stakeholders in order to facilitate decision
+                            making processes, based on
+                            dashboard finding</li>
+                    </ul>
+                    <p><strong>Tools/Technologies used :</strong> SQL,MS-Excel,PowerBI,data cleaning</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Certification</h2>
+            <ul class="certification-list">
+                <li>
+                    <strong>Cloud Infrastructure Automation with Face Detection</strong>
+                    <!-- <p></p> -->
+                    <ul>
+                        <li>Data analysis with python DA0101EN (powered by IBM)</li>
+
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -252,11 +363,17 @@
             <ul class="achievements-list">
                 <li>
                     <strong>CESSA Club:</strong>
-                    <p>Conducted coding workshops and mentoring sessions to support junior students in improving their programming skills. Collaborated with external organizations for guest lectures and coding events, helping expand the club's outreach and knowledge-sharing initiatives.</p>
+                    <p>Conducted coding workshops and mentoring sessions to support junior students in improving their
+                        programming skills. Collaborated with external organizations for guest lectures and coding
+                        events, helping expand the club's outreach and knowledge-sharing initiatives.</p>
                 </li>
                 <li>
-                    <strong>Accenture North America Data Analytics and Visualization Job Simulation on Forage - June 2024:</strong>
-                    <p>Completed a simulation focused on advising a hypothetical social media client as a Data Analyst at Accenture. Cleaned, modeled, and analyzed 7 datasets to uncover insights into content trends to inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate key insights for the client and internal stakeholders.</p>
+                    <strong>Accenture North America Data Analytics and Visualization Job Simulation on Forage - June
+                        2024:</strong>
+                    <p>Completed a simulation focused on advising a hypothetical social media client as a Data Analyst
+                        at Accenture. Cleaned, modeled, and analyzed 7 datasets to uncover insights into content trends
+                        to inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate
+                        key insights for the client and internal stakeholders.</p>
                 </li>
                 <li>
                     <strong>Award:</strong> Awarded as ‘Ideal Student of the Year 2016-2017’.
@@ -265,7 +382,7 @@
         </div>
     </div>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             const h1 = document.querySelector('h1');
             h1.style.animation = 'slideDown 0.5s forwards';
         };
