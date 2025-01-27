@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background: url('../images/bg.png') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 20px;
-    color: #fff;
-}
-
+            font-family: 'Poppins', Arial, sans-serif;
+            background: url('../images/bg.png') no-repeat center center fixed; /* Add your background image path */
+            background-size: cover; /* Ensure the image covers the entire background */
+            margin: 0;
+            padding: 20px;
+            color: #efe2e2;
+        }
 
         .container {
             display: flex;
@@ -26,48 +25,57 @@
         }
 
         .card {
-            background: linear-gradient(145deg, #292929, #1c1c1c);
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for readability */
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 40px;
             width: 90%;
-            max-width: 600px;
-            text-align: center;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 123, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
 
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid #007bff;
-            box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+            margin-right: 30px;
+            border: 5px solid #000; /* Changed to black */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-content {
+            flex: 1;
         }
 
         h1 {
             font-size: 32px;
             margin: 10px 0;
-            color: #00d4ff;
-            text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.7);
+            color: #000; /* Changed to black */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         h2 {
             font-size: 20px;
-            color: #e0e0e0;
+            color: #555; /* Dark gray for subheading */
             margin: 5px 0 20px;
             font-weight: 300;
+        }
+
+        .info {
+            margin-top: 20px;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.1); /* Light black background */
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
@@ -75,24 +83,24 @@
         }
 
         .info-item:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
             transform: translateY(-3px);
         }
 
         .info-item i {
             font-size: 22px;
-            color: #00d4ff;
+            color: #000; /* Changed to black */
             margin-right: 15px;
         }
 
         .info-item p {
             margin: 0;
-            color: #fff;
+            color: #333;
             font-size: 16px;
         }
 
         .info-item p strong {
-            color: #00d4ff;
+            color: #000; /* Changed to black */
         }
 
         .skills {
@@ -112,7 +120,7 @@
         }
 
         .progress {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.1); /* Light black background */
             border-radius: 5px;
             overflow: hidden;
             height: 12px;
@@ -122,12 +130,17 @@
 
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #00d4ff, #007bff);
-            box-shadow: 0 0 10px #00d4ff, 0 0 20px #007bff;
+            background: linear-gradient(90deg, #cfa5a5, #4cc2ce); /* Dark gradient */
+            box-shadow: 0 0 10px #000000, 0 0 20px #000000;
             text-align: center;
             color: white;
             width: 0;
             transition: width 2s ease-in-out;
+        }
+
+        .percentage {
+            margin-left: 10px; /* Increased space between skill name and percentage */
+            font-weight: bold; /* Make percentage bold */
         }
 
         .button-container {
@@ -138,7 +151,7 @@
         }
 
         .button {
-            background: linear-gradient(145deg, #007bff, #0056b3);
+            background: linear-gradient(145deg, #000, #333); /* Dark gradient */
             color: white;
             border: none;
             border-radius: 8px;
@@ -150,19 +163,68 @@
         }
 
         .button:hover {
-            background: linear-gradient(145deg, #0056b3, #007bff);
+            background: linear-gradient(145deg, #333, #000); /* Dark gradient */
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
         }
 
         a {
-            color: #fff;
+            color: #000; /* Changed to black */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #007bff;
+            color: #333; /* Dark gray on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column; /* Stack elements vertically */
+                align-items: center; /* Center items */
+                padding: 20px; /* Reduce padding */
+            }
+
+            .profile-pic {
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 20px; /* Add bottom margin */
+            }
+
+            h1 {
+                font-size: 28px; /* Adjust heading size */
+            }
+
+            h2 {
+                font-size: 18px; /* Adjust subheading size */
+            }
+
+            .info-item {
+                flex-direction: column; /* Stack icon and text */
+                align-items: flex-start; /* Align text to the left */
+            }
+
+            .info-item i {
+                margin-bottom: 5px; /* Add space below icon */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px; /* Further adjust heading size */
+            }
+
+            h2 {
+                font-size: 16px; /* Further adjust subheading size */
+            }
+
+            .info-item p {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+
+            .button {
+                padding: 10px 15px; /* Adjust button padding */
+            }
         }
     </style>
 </head>
@@ -171,91 +233,93 @@
     <div class="container">
         <div class="card">
             <img src="../images/profile.png" alt="Profile Picture" class="profile-pic">
-            <h1>Atharva Patkar</h1>
-            <h2>MLOps Engineer || DevOps Engineer || Data Scientist</h2>
+            <div class="text-content">
+                <h1>Atharva Subhash Patkar</h1>
+                <h2>MLOps Engineer || DevOps Engineer || Data Scientist</h2>
 
-            <div class="info">
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p><strong>Address:</strong> Gaonbhag, Sangli, Maharashtra</p>
+                <div class="info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Address:</strong> Gaonbhag, Sangli, Maharashtra</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <p><strong>Birthday:</strong> September 25, 2001</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p><strong>Degree:</strong> Bachelor of Technology in ENTC</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong> <a href="mailto:patkaratharva75@gmail.com">patkaratharva75@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-city"></i>
+                        <p><strong>City:</strong> Sangli</p>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-birthday-cake"></i>
-                    <p><strong>Birthday:</strong> September 25, 2001</p>
+            </div>
+        </div>
+
+        <div class="skills">
+            <h3>Skills</h3>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Machine Learning</span>
+                    <span class="percentage" data-percentage="90">0%</span>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <p><strong>Degree:</strong> Bachelor of Technology in ENTC</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><strong>Email:</strong> <a href="mailto:patkaratharva75@gmail.com">patkaratharva75@gmail.com</a></p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-city"></i>
-                    <p><strong>City:</strong> Sangli</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
                 </div>
             </div>
 
-            <div class="skills">
-                <h3>Skills</h3>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Machine Learning</span>
-                        <span class="percentage" data-percentage="90">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>DevOps</span>
+                    <span class="percentage" data-percentage="85">0%</span>
                 </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
+                </div>
+            </div>
 
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>DevOps</span>
-                        <span class="percentage" data-percentage="85">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Data Analysis / Big Data Analytics</span>
+                    <span class="percentage" data-percentage="80">0%</span>
                 </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
+                </div>
+            </div>
 
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Data Analysis / Big data analytics</span>
-                        <span class="percentage" data-percentage="80">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>GenAI</span>
+                    <span class="percentage" data-percentage="85">0%</span>
                 </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Python</span>
+                    <span class="percentage" data-percentage="95">0%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
+                </div>
+            </div>
 
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>GenAI</span>
-                        <span class="percentage" data-percentage="85">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>AWS Cloud</span>
+                    <span class="percentage" data-percentage="85">0%</span>
                 </div>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span class="percentage" data-percentage="95">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
-                </div>
-
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>AWS Cloud</span>
-                        <span class="percentage" data-percentage="80">0%</span>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 0;"></div>
-                    </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 0;"></div>
                 </div>
             </div>
         </div>
@@ -264,13 +328,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const skills = document.querySelectorAll(".skill");
-    
+
             skills.forEach((skill) => {
                 const percentageElement = skill.querySelector(".percentage");
                 const progressBar = skill.querySelector(".progress-bar");
                 const target = parseInt(percentageElement.dataset.percentage, 10);
                 let count = 0;
-    
+
                 const interval = setInterval(() => {
                     if (count <= target) {
                         percentageElement.textContent = `${count}%`;
@@ -283,4 +347,6 @@
             });
         });
     </script>
-</body>    
+</body>
+
+</html>
