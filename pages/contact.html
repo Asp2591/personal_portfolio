@@ -12,7 +12,10 @@
             background-image: url('../images/bg.png');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll; /* Changed from fixed to scroll */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Keeps the background stable */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,6 +25,14 @@
             padding: 20px;
             color: #0b0707;
         }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+                /* Allows scrolling on smaller screens */
+            }
+        }
+
 
         h1 {
             text-align: center;
@@ -209,7 +220,7 @@
             <button type="submit">Send Message</button>
         </form>
     </div>
-    
+
 </body>
 
 </html>
