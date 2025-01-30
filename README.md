@@ -1,5 +1,4 @@
 # personal_portfolio
 
 
-Creating portfolio ... 
-just wait...
+
