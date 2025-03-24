@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - MLOps Engineer</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
-            background: url('../images/bg.png') no-repeat center center fixed; /* Add your background image path */
-            background-size: cover; /* Ensure the image covers the entire background */
+            background: url('../images/bg.png') no-repeat center center fixed;
+            /* Add your background image path
+             */
+            background: linear-gradient(45deg, rgb(149, 230, 219), rgb(240, 197, 95), rgb(84, 69, 33));
+
+            background-size: cover;
+            /* Ensure the image covers the entire background */
             margin: 0;
             padding: 20px;
             color: #efe2e2;
@@ -25,7 +30,8 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for readability */
+            background: rgba(255, 255, 255, 0.9);
+            /* Slightly transparent white for readability */
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 40px;
@@ -46,7 +52,8 @@
             height: 150px;
             border-radius: 50%;
             margin-right: 30px;
-            border: 5px solid #000; /* Changed to black */
+            border: 5px solid #000;
+            /* Changed to black */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
@@ -57,13 +64,15 @@
         h1 {
             font-size: 32px;
             margin: 10px 0;
-            color: #000; /* Changed to black */
+            color: #000;
+            /* Changed to black */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         h2 {
             font-size: 20px;
-            color: #555; /* Dark gray for subheading */
+            color: #555;
+            /* Dark gray for subheading */
             margin: 5px 0 20px;
             font-weight: 300;
         }
@@ -76,7 +85,8 @@
         .info-item {
             display: flex;
             align-items: center;
-            background: rgba(0, 0, 0, 0.1); /* Light black background */
+            background: rgba(0, 0, 0, 0.1);
+            /* Light black background */
             padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
@@ -90,7 +100,8 @@
 
         .info-item i {
             font-size: 22px;
-            color: #000; /* Changed to black */
+            color: #000;
+            /* Changed to black */
             margin-right: 15px;
         }
 
@@ -101,7 +112,8 @@
         }
 
         .info-item p strong {
-            color: #000; /* Changed to black */
+            color: #000;
+            /* Changed to black */
         }
 
         .skills {
@@ -121,7 +133,8 @@
         }
 
         .progress {
-            background-color: rgba(0, 0, 0, 0.1); /* Light black background */
+            background-color: rgba(0, 0, 0, 0.1);
+            /* Light black background */
             border-radius: 5px;
             overflow: hidden;
             height: 12px;
@@ -131,7 +144,8 @@
 
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #cfa5a5, #4cc2ce); /* Dark gradient */
+            background: linear-gradient(90deg, #cfa5a5, #4cc2ce);
+            /* Dark gradient */
             box-shadow: 0 0 10px #000000, 0 0 20px #000000;
             text-align: center;
             color: white;
@@ -140,8 +154,10 @@
         }
 
         .percentage {
-            margin-left: 10px; /* Increased space between skill name and percentage */
-            font-weight: bold; /* Make percentage bold */
+            margin-left: 10px;
+            /* Increased space between skill name and percentage */
+            font-weight: bold;
+            /* Make percentage bold */
         }
 
         .button-container {
@@ -152,7 +168,8 @@
         }
 
         .button {
-            background: linear-gradient(145deg, #000, #333); /* Dark gradient */
+            background: linear-gradient(145deg, #000, #333);
+            /* Dark gradient */
             color: white;
             border: none;
             border-radius: 8px;
@@ -164,67 +181,84 @@
         }
 
         .button:hover {
-            background: linear-gradient(145deg, #333, #000); /* Dark gradient */
+            background: linear-gradient(145deg, #333, #000);
+            /* Dark gradient */
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
         }
 
         a {
-            color: #000; /* Changed to black */
+            color: #000;
+            /* Changed to black */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #333; /* Dark gray on hover */
+            color: #333;
+            /* Dark gray on hover */
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
             .card {
-                flex-direction: column; /* Stack elements vertically */
-                align-items: center; /* Center items */
-                padding: 20px; /* Reduce padding */
+                flex-direction: column;
+                /* Stack elements vertically */
+                align-items: center;
+                /* Center items */
+                padding: 20px;
+                /* Reduce padding */
             }
 
             .profile-pic {
-                margin-right: 0; /* Remove right margin */
-                margin-bottom: 20px; /* Add bottom margin */
+                margin-right: 0;
+                /* Remove right margin */
+                margin-bottom: 20px;
+                /* Add bottom margin */
             }
 
             h1 {
-                font-size: 28px; /* Adjust heading size */
+                font-size: 28px;
+                /* Adjust heading size */
             }
 
             h2 {
-                font-size: 18px; /* Adjust subheading size */
+                font-size: 18px;
+                /* Adjust subheading size */
             }
 
             .info-item {
-                flex-direction: column; /* Stack icon and text */
-                align-items: flex-start; /* Align text to the left */
+                flex-direction: column;
+                /* Stack icon and text */
+                align-items: flex-start;
+                /* Align text to the left */
             }
 
             .info-item i {
-                margin-bottom: 5px; /* Add space below icon */
+                margin-bottom: 5px;
+                /* Add space below icon */
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 24px; /* Further adjust heading size */
+                font-size: 24px;
+                /* Further adjust heading size */
             }
 
             h2 {
-                font-size: 16px; /* Further adjust subheading size */
+                font-size: 16px;
+                /* Further adjust subheading size */
             }
 
             .info-item p {
-                font-size: 14px; /* Adjust font size for smaller screens */
+                font-size: 14px;
+                /* Adjust font size for smaller screens */
             }
 
             .button {
-                padding: 10px 15px; /* Adjust button padding */
+                padding: 10px 15px;
+                /* Adjust button padding */
             }
         }
     </style>
@@ -240,9 +274,17 @@
 
                 <div class="info">
                     <ul>
-                        <li>I am an enthusiastic and detail-oriented MLOps Engineer with a passion for building scalable, efficient, and automated machine learning pipelines. My expertise lies at the intersection of software engineering, DevOps, and machine learning, where I ensure seamless integration of models into production environments.</li>
-                        <li>With a strong foundation in cloud platforms, CI/CD tools, and infrastructure as code, I specialize in deploying and monitoring robust ML solutions that deliver measurable impact.</li>
-                        <li>I thrive on tackling challenges in model versioning, deployment, and monitoring, all while optimizing workflows for speed, reliability, and scalability. I’m committed to continuous learning and leveraging cutting-edge technologies to bridge the gap between data science and operational excellence.</li>
+                        <li>I am an enthusiastic and detail-oriented MLOps Engineer with a passion for building
+                            scalable, efficient, and automated machine learning pipelines. My expertise lies at the
+                            intersection of software engineering, DevOps, and machine learning, where I ensure seamless
+                            integration of models into production environments.</li>
+                        <li>With a strong foundation in cloud platforms, CI/CD tools, and infrastructure as code, I
+                            specialize in deploying and monitoring robust ML solutions that deliver measurable impact.
+                        </li>
+                        <li>I thrive on tackling challenges in model versioning, deployment, and monitoring, all while
+                            optimizing workflows for speed, reliability, and scalability. I’m committed to continuous
+                            learning and leveraging cutting-edge technologies to bridge the gap between data science and
+                            operational excellence.</li>
                     </ul>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -258,7 +300,8 @@
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <p><strong>Email:</strong> <a href="mailto:patkaratharva75@gmail.com">patkaratharva75@gmail.com</a></p>
+                        <p><strong>Email:</strong> <a
+                                href="mailto:patkaratharva75@gmail.com">patkaratharva75@gmail.com</a></p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-city"></i>

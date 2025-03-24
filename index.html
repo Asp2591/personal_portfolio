@@ -18,7 +18,9 @@
             font-family: 'Roboto', sans-serif;
             color: #fcf3f3;
             position: relative;
-            background-image: url("./images/bg.png");
+            /* background-image: url("./images/bg.png"); */
+            /* background-color: rgb(243, 168, 29),rgb(134, 130, 121) ; */
+            background: linear-gradient(45deg, rgb(149, 230, 219), rgb(240, 197, 95),rgb(84, 69, 33));
             background-size: cover;
             background-position: center;
 
@@ -86,7 +88,7 @@
         }
 
         .highlight {
-            color: #d8f30c;
+            color: #090b0c;
             /* Yellow color for highlighted text */
             display: inline-block;
             /* Ensure it behaves like an inline element */
@@ -122,7 +124,7 @@
         }
 
         .card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color:rgba(129, 81, 104, 0.3);
             border-radius: 10px;
             padding: 20px;
             margin: 10px auto;
@@ -314,22 +316,22 @@
             style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
             <!-- MLOps Icon -->
             <div style="text-align: center;">
-                <i class="fas fa-robot" style="font-size: 2rem; color: #e6df83;"></i>
+                <i class="fas fa-robot" style="font-size: 2rem; color: #8e6633;"></i>
                 <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">MLOps</p>
             </div>
             <!-- DevOps Icon -->
             <div style="text-align: center;">
-                <i class="fas fa-code-branch" style="font-size: 2rem; color: #e6df83;"></i>
+                <i class="fas fa-code-branch" style="font-size: 2rem; color: #8e6633;"></i>
                 <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">DevOps</p>
             </div>
             <!-- Data Scientist Icon -->
             <div style="text-align: center;">
-                <i class="fas fa-chart-line" style="font-size: 2rem; color: #e6df83;"></i>
-                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">Data Scientist</p>
+                <i class="fas fa-chart-line" style="font-size: 2rem; color: #8e6633;"></i>
+                <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">AI developer</p>
             </div>
             <!-- Backend Icon -->
             <div style="text-align: center;">
-                <i class="fas fa-server" style="font-size: 2rem; color: #e6df83;"></i>
+                <i class="fas fa-server" style="font-size: 2rem; color: #8e6633;"></i>
                 <p style="margin-top: 5px; color: #ffffff; font-family: 'Roboto', sans-serif;">Backend</p>
             </div>
         </div>
@@ -347,7 +349,7 @@
 
 
     <script>
-        const phrases = ["MlOps Engineer.", "DevOps engineer.", "Data scientist.", "Backend developer."];
+        const phrases = ["MlOps Engineer.", "DevOps engineer.", "AI developer.", "Backend developer."];
         let currentPhraseIndex = 0;
         let currentCharIndex = 0;
         let isDeleting = false;
