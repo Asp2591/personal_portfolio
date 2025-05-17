@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Merriweather','Roboto', sans-serif;
@@ -60,19 +61,42 @@
             }
         }
 
-        h2 {
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
             color: #282829;
             border-bottom: 2px solid #2c3e50;
             padding-bottom: 5px;
             font-family: 'Montserrat';
+            margin-bottom: 10px;
         }
 
-        .section {
-            margin-bottom: 20px;
+        .section-header h2 {
+            margin: 0;
+            padding: 0;
+            border: none;
         }
 
-        .section p {
-            margin: 5px 0;
+        .section-header .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            max-height: 5000px; /* Large enough to contain content */
+            opacity: 1;
+        }
+
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
         }
 
         .skills-list,
@@ -127,7 +151,7 @@
                 padding: 15px;
             }
 
-            h2 {
+            .section-header h2 {
                 font-size: 1.5em;
             }
 
@@ -150,7 +174,7 @@
                 font-size: 1.5em;
             }
 
-            h2 {
+            .section-header h2 {
                 font-size: 1.3em;
             }
 
@@ -165,228 +189,257 @@
     <div class="container">
         <h1>Resume</h1>
         <div class="section">
-            <h2>Education</h2>
-            <table class="education-table">
-                <thead>
-                    <tr>
-                        <th>Year</th>
-                        <th>Degree</th>
-                        <th>Institute</th>
-                        <th>GPA/Percentage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2019-2023</td>
-                        <td>B.Tech</td>
-                        <td>Kitcoek, Kolhapur</td>
-                        <td>7.88/10</td>
-                    </tr>
-                    <tr>
-                        <td>2019</td>
-                        <td>HSC</td>
-                        <td>G.A. College, Sangli</td>
-                        <td>71.57%</td>
-                    </tr>
-                    <tr>
-                        <td>2017</td>
-                        <td>SSC</td>
-                        <td>G.A. High School, Sangli</td>
-                        <td>86.80%</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Education</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Degree</th>
+                            <th>Institute</th>
+                            <th>GPA/Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2019-2023</td>
+                            <td>B.Tech</td>
+                            <td>Kitcoek, Kolhapur</td>
+                            <td>7.88/10</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>HSC</td>
+                            <td>G.A. College, Sangli</td>
+                            <td>71.57%</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>SSC</td>
+                            <td>G.A. High School, Sangli</td>
+                            <td>86.80%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li><strong>Languages:</strong> Python 3, C, C++</li>
-                <li><strong>DevOps Tools:</strong> Terraform, Docker, Kubernetes, Ansible, Jenkins, Git and GitHub,
-                    Prometheus, Grafana</li>
-                <li><strong>Data Science:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Prompt Design,
-                    Fine Tuning, LoRA, QLoRA, PyTorch, TensorFlow, Generative AI, RAG</li>
-                <li><strong>Web Development:</strong> HTML, CSS, JavaScript, Flask, FastAPI, Bootstrap</li>
-                <li><strong>Cloud Platforms:</strong> AWS</li>
-                <li><strong>Databases:</strong> MySQL</li>
-                <li><strong>Operating Systems:</strong> Linux</li>
-            </ul>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Skills</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <ul class="skills-list">
+                    <li><strong>Languages:</strong> Python 3, C, C++</li>
+                    <li><strong>DevOps Tools:</strong> Terraform, Docker, Kubernetes, Ansible, Jenkins, Git and GitHub,
+                        Prometheus, Grafana</li>
+                    <li><strong>Data Science:</strong> Machine Learning, Deep Learning, Computer Vision, NLP, Prompt Design,
+                        Fine Tuning, LoRA, QLoRA, PyTorch, TensorFlow, Generative AI, RAG</li>
+                    <li><strong>Web Development:</strong> HTML, CSS, JavaScript, Flask, FastAPI, Bootstrap</li>
+                    <li><strong>Cloud Platforms:</strong> AWS</li>
+                    <li><strong>Databases:</strong> MySQL</li>
+                    <li><strong>Operating Systems:</strong> Linux</li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Internships/Experience</h2>
-            <ul class="experience-list">
-                <li>
-                    <strong>Eiminence Institute</strong> - Sangli (Feb 2024 – Dec 2024)
-                    <p><strong>Role:</strong> MLOps Intern</p>
-                    <p>Successfully completed an internship in DevOps and MLOps, gaining hands-on experience with cloud
-                        platforms as well.</p>
-                    <p><strong>Responsibilities:</strong></p>
-                    <ul>
-                        <li><strong>Cloud Platform:</strong> AWS</li>
-                        <li><strong>DevOps:</strong> Implemented and optimized CI/CD pipelines using tools like Docker,
-                            Kubernetes, Jenkins, Ansible, Terraform. Automated deployment processes, reducing deployment
-                            time by 30% and enhancing system reliability.</li>
-                        <li><strong>MLOps:</strong> Integrated machine learning workflows into production environments
-                            using MLflow and Kubeflow. Streamlined model development, deployment, and monitoring for
-                            increased efficiency and scalability.</li>
-                    </ul>
-                </li>
-                <!-- <li>
-                    <strong>Job Title</strong> - Company Name (Month Year - Month Year)
-                    <p>Description of your responsibilities and achievements during the job.</p>
-                </li> -->
-            </ul>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Internships/Experience</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <ul class="experience-list">
+                    <li>
+                        <strong>Eiminence Institute</strong> - Sangli (Feb 2024 – Dec 2024)
+                        <p><strong>Role:</strong> MLOps Intern</p>
+                        <p>Successfully completed an internship in DevOps and MLOps, gaining hands-on experience with cloud
+                            platforms as well.</p>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li><strong>Cloud Platform:</strong> AWS</li>
+                            <li><strong>DevOps:</strong> Implemented and optimized CI/CD pipelines using tools like Docker,
+                                Kubernetes, Jenkins, Ansible, Terraform. Automated deployment processes, reducing deployment
+                                time by 30% and enhancing system reliability.</li>
+                            <li><strong>MLOps:</strong> Integrated machine learning workflows into production environments
+                                using MLflow and Kubeflow. Streamlined model development, deployment, and monitoring for
+                                increased efficiency and scalability.</li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <strong>Job Title</strong> - Company Name (Month Year - Month Year)
+                        <p>Description of your responsibilities and achievements during the job.</p>
+                    </li> -->
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Projects</h2>
-            <ul class="projects-list">
-                <li>
-                    <strong>Cloud Infrastructure Automation with Face Detection</strong>
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Developed a face detection model with over 85% accuracy to authenticate users and automate
-                            infrastructure provisioning.</li>
-                        <li>Written a Terraform script to launch AWS EC2 instances and attach EBS volumes upon user
-                            identification.</li>
-                        <li>Enhanced security for larger projects by integrating facial recognition as a prerequisite
-                            for infrastructure automation.</li>
-                        <li>This approach can also be applied to larger projects to enhance security, with the
-                            capability to send email and WhatsApp notifications to users.</li>
-                    </ul>
-                    <p><strong>Tools/Technologies used :</strong> Face detection model (Haar-cascade), Terraform, AWS</p>
-                </li>
-                <li>
-                    <strong>Prompt-to-SQL-to-text generator (QueryCraft):</strong>
-                    <!-- <p> </p> -->
-                    <ul>
-                        <li>Devised a chatbot using Gemini-Pro LLM, FastAPI, Python, and SQL, deployed on Docker and
-                            hosted on Azure VM, to generate and execute SQL queries from natural language prompts,
-                            improving data accessibility and reducing query creation time by 40%.</li>
-                        <li>Integrated Google Generative AI (Gemini-Pro) and Snowflake connector for customized SQL
-                            query generation, enhancing
-                            data retrieval efficiency.</li>
-                        <li>Built a seamless system for querying Snowflake and formatting results, streamlining data
-                            analysis and reducing manual query
-                            handling.</li>
-                        <li>Created an API with FastAPI and Python to execute and format SQL queries, improving response
-                            times.</li>
-                        <li>Optimized query processing and result presentation, leveraging LLMs for accurate data
-                            summaries.</li>
-                    </ul>
-                    <p><strong>Tools/Technologies used :</strong> :LLM model, docker, Kubernetes, Jenkins, fastapi,
-                        snowflake,SQL</p>
-                </li>
-                <li>
-                    <strong>Logo Maker Using LLM</strong>
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Created an AI-powered logo generation tool leveraging Large Language Models (LLMs) to
-                            transform
-                            text prompts into visually compelling logos, with dynamic customization options for style,
-                            color, and themes to meet industry-specific branding needs.</li>
-                        <li>Optimized performance through advanced prompt engineering techniques, enhancing the
-                            precision and relevance of generated designs to align with user expectations.</li>
-                        <li>Engineered a containerized architecture using Docker and automated CI/CD pipelines with
-                            Jenkins and GitHub webhooks, ensuring seamless scalability, portability, and efficient
-                            deployment across diverse environments.</li>
-                        <li>Streamlined workflows by autom ating the logo creation process, enabling businesses and
-                            individuals to achieve professional-grade designs rapidly and cost-effectively.</li>
-                    </ul>
-                    <p><strong>Tools/Technology :</strong> LLM model, Docker, Kubernetes, Jenkins, FastAPI</p>
-                </li>
-                <li>
-                    <strong>Multimodal RAG Chatbot</strong>
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Planned and executed a project to fine-tune a Large Language Model (LLM) for enhanced
-                            performance
-                            in domain-specific tasks.</li>
-                        <li>Applied transfer learning to adapt the base model to custom datasets, improving accuracy and
-                            contextual relevance.</li>
-                        <li>Utilized Hugging Face Transformers and PyTorch for seamless model fine-tuning and
-                            evaluation.</li>
-                        <li>Used grounding technique to fetch internet links and context, YouTube videos to do it
-                            multimodal output.</li>
-                        <li>Upgraded deployment by containerizing the model with Docker and orchestrating scalable
-                            deployments using Kubernetes, integrating MLOps tools to automate workflows and ensure
-                            robust model lifecycle management.</li>
-                    </ul>
-                    <p><strong>Tools/Technologies used :</strong> LLM model, Docker, Kubernetes, RAG, Faiss vectorDB</p>
-                </li>
-                <li>
-                    <strong>Constructed Infrastructure for AI Application</strong>
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Designed and implemented scalable infrastructure using AWS EC2 for hosting applications and
-                            Docker for containerization.</li>
-                        <li>Orchestrated deployments with Kubernetes and automated event-driven scaling using KEDA.</li>
-                        <li>Integrated AWS SQS for message queuing and decoupling microservices.</li>
-                        <li>Built secure, high-performance APIs with AWS API Gateway, ensuring seamless communication
-                            between components.</li>
-                        <li>Leveraged CI/CD pipelines for efficient deployments and monitored infrastructure using
-                            CloudWatch and Prometheus.</li>
-                        <li>Streamlined workflows to optimize resource utilization, enhance application scalability, and
-                            ensure high availability across production environments.</li>
-                    </ul>
-                    <p><strong>Tools/Technologies used :</strong> EC2 instance, Docker container, Kubernetes (KEDA), AWS SQS, AWS API
-                        Gateway, Prometheus</p>
-                </li>
-                <li>
-                    <strong>Credit card financial dashboard using Power BI:</strong>
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Created an interactive dashboard with real-time analytics using transaction and customer
-                            data from a SQL database.
-                        </li>
-                        <li>Simplified data analysis and processing to track important performance indicators and
-                            patterns.
-                        </li>
-                        <li>Actionable insights were distributed to stakeholders in order to facilitate decision
-                            making processes, based on
-                            dashboard finding</li>
-                    </ul>
-                    <p><strong>Tools/Technologies used :</strong> SQL,MS-Excel,PowerBI,data cleaning</p>
-                </li>
-            </ul>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Projects</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <ul class="projects-list">
+                    <li>
+                        <strong>Cloud Infrastructure Automation with Face Detection</strong>
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Developed a face detection model with over 85% accuracy to authenticate users and automate
+                                infrastructure provisioning.</li>
+                            <li>Written a Terraform script to launch AWS EC2 instances and attach EBS volumes upon user
+                                identification.</li>
+                            <li>Enhanced security for larger projects by integrating facial recognition as a prerequisite
+                                for infrastructure automation.</li>
+                            <li>This approach can also be applied to larger projects to enhance security, with the
+                                capability to send email and WhatsApp notifications to users.</li>
+                        </ul>
+                        <p><strong>Tools/Technologies used :</strong> Face detection model (Haar-cascade), Terraform, AWS</p>
+                    </li>
+                    <li>
+                        <strong>Prompt-to-SQL-to-text generator (QueryCraft):</strong>
+                        <!-- <p> </p> -->
+                        <ul>
+                            <li>Devised a chatbot using Gemini-Pro LLM, FastAPI, Python, and SQL, deployed on Docker and
+                                hosted on Azure VM, to generate and execute SQL queries from natural language prompts,
+                                improving data accessibility and reducing query creation time by 40%.</li>
+                            <li>Integrated Google Generative AI (Gemini-Pro) and Snowflake connector for customized SQL
+                                query generation, enhancing
+                                data retrieval efficiency.</li>
+                            <li>Built a seamless system for querying Snowflake and formatting results, streamlining data
+                                analysis and reducing manual query
+                                handling.</li>
+                            <li>Created an API with FastAPI and Python to execute and format SQL queries, improving response
+                                times.</li>
+                            <li>Optimized query processing and result presentation, leveraging LLMs for accurate data
+                                summaries.</li>
+                        </ul>
+                        <p><strong>Tools/Technologies used :</strong> :LLM model, docker, Kubernetes, Jenkins, fastapi,
+                            snowflake,SQL</p>
+                    </li>
+                    <li>
+                        <strong>Logo Maker Using LLM</strong>
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Created an AI-powered logo generation tool leveraging Large Language Models (LLMs) to
+                                transform
+                                text prompts into visually compelling logos, with dynamic customization options for style,
+                                color, and themes to meet industry-specific branding needs.</li>
+                            <li>Optimized performance through advanced prompt engineering techniques, enhancing the
+                                precision and relevance of generated designs to align with user expectations.</li>
+                            <li>Engineered a containerized architecture using Docker and automated CI/CD pipelines with
+                                Jenkins and GitHub webhooks, ensuring seamless scalability, portability, and efficient
+                                deployment across diverse environments.</li>
+                            <li>Streamlined workflows by autom ating the logo creation process, enabling businesses and
+                                individuals to achieve professional-grade designs rapidly and cost-effectively.</li>
+                        </ul>
+                        <p><strong>Tools/Technology :</strong> LLM model, Docker, Kubernetes, Jenkins, FastAPI</p>
+                    </li>
+                    <li>
+                        <strong>Multimodal RAG Chatbot</strong>
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Planned and executed a project to fine-tune a Large Language Model (LLM) for enhanced
+                                performance
+                                in domain-specific tasks.</li>
+                            <li>Applied transfer learning to adapt the base model to custom datasets, improving accuracy and
+                                contextual relevance.</li>
+                            <li>Utilized Hugging Face Transformers and PyTorch for seamless model fine-tuning and
+                                evaluation.</li>
+                            <li>Used grounding technique to fetch internet links and context, YouTube videos to do it
+                                multimodal output.</li>
+                            <li>Upgraded deployment by containerizing the model with Docker and orchestrating scalable
+                                deployments using Kubernetes, integrating MLOps tools to automate workflows and ensure
+                                robust model lifecycle management.</li>
+                        </ul>
+                        <p><strong>Tools/Technologies used :</strong> LLM model, Docker, Kubernetes, RAG, Faiss vectorDB</p>
+                    </li>
+                    <li>
+                        <strong>Constructed Infrastructure for AI Application</strong>
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Designed and implemented scalable infrastructure using AWS EC2 for hosting applications and
+                                Docker for containerization.</li>
+                            <li>Orchestrated deployments with Kubernetes and automated event-driven scaling using KEDA.</li>
+                            <li>Integrated AWS SQS for message queuing and decoupling microservices.</li>
+                            <li>Built secure, high-performance APIs with AWS API Gateway, ensuring seamless communication
+                                between components.</li>
+                            <li>Leveraged CI/CD pipelines for efficient deployments and monitored infrastructure using
+                                CloudWatch and Prometheus.</li>
+                            <li>Streamlined workflows to optimize resource utilization, enhance application scalability, and
+                                ensure high availability across production environments.</li>
+                        </ul>
+                        <p><strong>Tools/Technologies used :</strong> EC2 instance, Docker container, Kubernetes (KEDA), AWS SQS, AWS API
+                            Gateway, Prometheus</p>
+                    </li>
+                    <li>
+                        <strong>Credit card financial dashboard using Power BI:</strong>
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Created an interactive dashboard with real-time analytics using transaction and customer
+                                data from a SQL database.
+                            </li>
+                            <li>Simplified data analysis and processing to track important performance indicators and
+                                patterns.
+                            </li>
+                            <li>Actionable insights were distributed to stakeholders in order to facilitate decision
+                                making processes, based on
+                                dashboard finding</li>
+                        </ul>
+                        <p><strong>Tools/Technologies used :</strong> SQL,MS-Excel,PowerBI,data cleaning</p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Certification</h2>
-            <ul class="certification-list">
-                <li>
-                    <!-- <strong>Cloud Infrastructure Automation with Face Detection</strong> -->
-                    <!-- <p></p> -->
-                    <ul>
-                        <li>Data analysis with python DA0101EN (powered by IBM)</li>
-
-                    </ul>
-                </li>
-            </ul>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Certification</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <ul class="certification-list">
+                    <li>
+                        <!-- <strong>Cloud Infrastructure Automation with Face Detection</strong> -->
+                        <!-- <p></p> -->
+                        <ul>
+                            <li>Data analysis with python DA0101EN (powered by IBM)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="section">
-            <h2>Achievements/Extracurricular Activities</h2>
-            <ul class="achievements-list">
-                <li>
-                    <strong>CESSA Club:</strong>
-                    <p>Conducted coding workshops and mentoring sessions to support junior students in improving their
-                        programming skills. Collaborated with external organizations for guest lectures and coding
-                        events, helping expand the club's outreach and knowledge-sharing initiatives.</p>
-                </li>
-                <li>
-                    <strong>Accenture North America Data Analytics and Visualization Job Simulation on Forage - June
-                        2024:</strong>
-                    <p>Completed a simulation focused on advising a hypothetical social media client as a Data Analyst
-                        at Accenture. Cleaned, modeled, and analyzed 7 datasets to uncover insights into content trends
-                        to inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate
-                        key insights for the client and internal stakeholders.</p>
-                </li>
-                <li>
-                    <strong>Award:</strong> Awarded as ‘Ideal Student of the Year 2016-2017’.
-                </li>
-            </ul>
+            <div class="section-header collapsed" onclick="toggleSection(this)">
+                <h2>Achievements/Extracurricular Activities</h2>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="section-content collapsed">
+                <ul class="achievements-list">
+                    <li>
+                        <strong>CESSA Club:</strong>
+                        <p>Conducted coding workshops and mentoring sessions to support junior students in improving their
+                            programming skills. Collaborated with external organizations for guest lectures and coding
+                            events, helping expand the club's outreach and knowledge-sharing initiatives.</p>
+                    </li>
+                    <li>
+                        <strong>Accenture North America Data Analytics and Visualization Job Simulation on Forage - June
+                            2024:</strong>
+                        <p>Completed a simulation focused on advising a hypothetical social media client as a Data Analyst
+                            at Accenture. Cleaned, modeled, and analyzed 7 datasets to uncover insights into content trends
+                            to inform strategic decisions. Prepared a PowerPoint deck and video presentation to communicate
+                            key insights for the client and internal stakeholders.</p>
+                    </li>
+                    <li>
+                        <strong>Award:</strong> Awarded as 'Ideal Student of the Year 2016-2017'.
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <script>
@@ -394,6 +447,17 @@
             const h1 = document.querySelector('h1');
             h1.style.animation = 'slideDown 0.5s forwards';
         };
+
+        function toggleSection(header) {
+            // Toggle the collapsed class on the header
+            header.classList.toggle('collapsed');
+            
+            // Get the content element (next sibling)
+            const content = header.nextElementSibling;
+            
+            // Toggle the collapsed class on the content
+            content.classList.toggle('collapsed');
+        }
     </script>
 </body>
 
